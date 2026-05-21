@@ -1,0 +1,3561 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_fe402801db6822478758ea6dfca1cb28 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+<div style="position: fixed; bottom: 30px; left: 30px; z-index: 1000;
+     background-color: white; padding: 15px; border-radius: 8px;
+     border: 1px solid #ccc; font-size: 13px;">
+  <b>Clusters de aeroportos</b><br><br>
+  <span style="color:#2ecc71">●</span> Excelente (16% atraso)<br>
+  <span style="color:#f39c12">●</span> Bom (21% atraso)<br>
+  <span style="color:#e74c3c">●</span> Ruim (26% atraso)<br>
+  <span style="color:#c0392b">●</span> Crítico (33% atraso)<br>
+</div>
+    
+            <div class="folium-map" id="map_fe402801db6822478758ea6dfca1cb28" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_fe402801db6822478758ea6dfca1cb28 = L.map(
+                "map_fe402801db6822478758ea6dfca1cb28",
+                {
+                    center: [39.5, -98.35],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 4,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_4728007e7d1b5b1587ec37556ab2e0e7 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_4728007e7d1b5b1587ec37556ab2e0e7.addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+            var circle_marker_7d3af5cf682865df0935782a69f7432f = L.circleMarker(
+                [35.04022, -106.60919],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_93b25c720751d7cb1c6e3a8a4024cbc3 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5d8837e1db09ec3eb48dbc48826d6bfa = $(`<div id="html_5d8837e1db09ec3eb48dbc48826d6bfa" style="width: 100.0%; height: 100.0%;"><b>ABQ — Albuquerque International Sunport</b><br>             Cidade: Albuquerque, NM<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 20.4%<br>             Atraso médio: 6.4 min</div>`)[0];
+                popup_93b25c720751d7cb1c6e3a8a4024cbc3.setContent(html_5d8837e1db09ec3eb48dbc48826d6bfa);
+            
+        
+
+        circle_marker_7d3af5cf682865df0935782a69f7432f.bindPopup(popup_93b25c720751d7cb1c6e3a8a4024cbc3)
+        ;
+
+        
+    
+    
+            var circle_marker_045f6c53ca251307e5c2ab126ecc4b12 = L.circleMarker(
+                [39.45758, -74.57717],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_babdc360c6ec9c1c1b71e7a42ae0bfd2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_31b5e40ea5d277644bbdc50032696071 = $(`<div id="html_31b5e40ea5d277644bbdc50032696071" style="width: 100.0%; height: 100.0%;"><b>ACY — Atlantic City International Airport</b><br>             Cidade: Atlantic City, NJ<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 21.8%<br>             Atraso médio: 4.8 min</div>`)[0];
+                popup_babdc360c6ec9c1c1b71e7a42ae0bfd2.setContent(html_31b5e40ea5d277644bbdc50032696071);
+            
+        
+
+        circle_marker_045f6c53ca251307e5c2ab126ecc4b12.bindPopup(popup_babdc360c6ec9c1c1b71e7a42ae0bfd2)
+        ;
+
+        
+    
+    
+            var circle_marker_bbd471d9ceac51d91c43c48d02e57429 = L.circleMarker(
+                [31.32737, -92.54856],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_c69ddcfff9c4c96cda73de3b89d2d6b8 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f9ba5aedda90fc090a2e8b88e3f50fc1 = $(`<div id="html_f9ba5aedda90fc090a2e8b88e3f50fc1" style="width: 100.0%; height: 100.0%;"><b>AEX — Alexandria International Airport</b><br>             Cidade: Alexandria, LA<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 21.1%<br>             Atraso médio: 8.6 min</div>`)[0];
+                popup_c69ddcfff9c4c96cda73de3b89d2d6b8.setContent(html_f9ba5aedda90fc090a2e8b88e3f50fc1);
+            
+        
+
+        circle_marker_bbd471d9ceac51d91c43c48d02e57429.bindPopup(popup_c69ddcfff9c4c96cda73de3b89d2d6b8)
+        ;
+
+        
+    
+    
+            var circle_marker_2e6cee37befc29b22a4b4df7bdd33759 = L.circleMarker(
+                [42.74812, -73.80298],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_3d9542d843ac7efa6815dc7b5af08878 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f4d6e7ddc874ee6732ad40c2c71d4f8c = $(`<div id="html_f4d6e7ddc874ee6732ad40c2c71d4f8c" style="width: 100.0%; height: 100.0%;"><b>ALB — Albany International Airport</b><br>             Cidade: Albany, NY<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 19.4%<br>             Atraso médio: 2.6 min</div>`)[0];
+                popup_3d9542d843ac7efa6815dc7b5af08878.setContent(html_f4d6e7ddc874ee6732ad40c2c71d4f8c);
+            
+        
+
+        circle_marker_2e6cee37befc29b22a4b4df7bdd33759.bindPopup(popup_3d9542d843ac7efa6815dc7b5af08878)
+        ;
+
+        
+    
+    
+            var circle_marker_4fc5ee4a06ba743816372810910cfa64 = L.circleMarker(
+                [35.21937, -101.70593],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_8664dc7337e118b5dcd1fc2d5ebd8bfe = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_309e2c43855ced77ca23f3c37a553aaf = $(`<div id="html_309e2c43855ced77ca23f3c37a553aaf" style="width: 100.0%; height: 100.0%;"><b>AMA — Rick Husband Amarillo International Airport</b><br>             Cidade: Amarillo, TX<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 25.4%<br>             Atraso médio: 10.4 min</div>`)[0];
+                popup_8664dc7337e118b5dcd1fc2d5ebd8bfe.setContent(html_309e2c43855ced77ca23f3c37a553aaf);
+            
+        
+
+        circle_marker_4fc5ee4a06ba743816372810910cfa64.bindPopup(popup_8664dc7337e118b5dcd1fc2d5ebd8bfe)
+        ;
+
+        
+    
+    
+            var circle_marker_6d985ba7a1480bf0a1b313b26667833c = L.circleMarker(
+                [61.17432, -149.99619],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_16507b58ae9517b1e18b6e7568de7db2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b0b43d2e9624807ac17bea74eca5c58c = $(`<div id="html_b0b43d2e9624807ac17bea74eca5c58c" style="width: 100.0%; height: 100.0%;"><b>ANC — Ted Stevens Anchorage International Airport</b><br>             Cidade: Anchorage, AK<br>             Cluster: Excelente (16%)<br>             Taxa de atraso: 10.6%<br>             Atraso médio: -2.8 min</div>`)[0];
+                popup_16507b58ae9517b1e18b6e7568de7db2.setContent(html_b0b43d2e9624807ac17bea74eca5c58c);
+            
+        
+
+        circle_marker_6d985ba7a1480bf0a1b313b26667833c.bindPopup(popup_16507b58ae9517b1e18b6e7568de7db2)
+        ;
+
+        
+    
+    
+            var circle_marker_801ad67b6d87523c78b01718d8c47cc5 = L.circleMarker(
+                [39.22316, -106.86885],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_79f9595fd48337ef09a43f9ead079b9a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9a320f60949e405b03670a7e368a68fa = $(`<div id="html_9a320f60949e405b03670a7e368a68fa" style="width: 100.0%; height: 100.0%;"><b>ASE — Aspen-Pitkin County Airport</b><br>             Cidade: Aspen, CO<br>             Cluster: Crítico (33%)<br>             Taxa de atraso: 33.3%<br>             Atraso médio: 16.9 min</div>`)[0];
+                popup_79f9595fd48337ef09a43f9ead079b9a.setContent(html_9a320f60949e405b03670a7e368a68fa);
+            
+        
+
+        circle_marker_801ad67b6d87523c78b01718d8c47cc5.bindPopup(popup_79f9595fd48337ef09a43f9ead079b9a)
+        ;
+
+        
+    
+    
+            var circle_marker_aaa7df326a7e6fcd4a4043aed928d19d = L.circleMarker(
+                [33.64044, -84.42694],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_324969ed846c06d3a06217cf78f7ef73 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_156bce7b2e147787b285217cf8dd44bb = $(`<div id="html_156bce7b2e147787b285217cf8dd44bb" style="width: 100.0%; height: 100.0%;"><b>ATL — Hartsfield-Jackson Atlanta International Airport</b><br>             Cidade: Atlanta, GA<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 18.1%<br>             Atraso médio: 3.9 min</div>`)[0];
+                popup_324969ed846c06d3a06217cf78f7ef73.setContent(html_156bce7b2e147787b285217cf8dd44bb);
+            
+        
+
+        circle_marker_aaa7df326a7e6fcd4a4043aed928d19d.bindPopup(popup_324969ed846c06d3a06217cf78f7ef73)
+        ;
+
+        
+    
+    
+            var circle_marker_aba41a5e7ddbb4f9e19323fc485b918a = L.circleMarker(
+                [30.19453, -97.66987],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_72240220a5826542c9afc0082952787b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b4956a5f48b985217993292fc2f3b752 = $(`<div id="html_b4956a5f48b985217993292fc2f3b752" style="width: 100.0%; height: 100.0%;"><b>AUS — Austin-Bergstrom International Airport</b><br>             Cidade: Austin, TX<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 18.9%<br>             Atraso médio: 5.4 min</div>`)[0];
+                popup_72240220a5826542c9afc0082952787b.setContent(html_b4956a5f48b985217993292fc2f3b752);
+            
+        
+
+        circle_marker_aba41a5e7ddbb4f9e19323fc485b918a.bindPopup(popup_72240220a5826542c9afc0082952787b)
+        ;
+
+        
+    
+    
+            var circle_marker_c6cc2b1572b2c87c5d1eae8601510c2e = L.circleMarker(
+                [41.93887, -72.68323],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_c94d8a7a0d3415b2458b6349f75db3f2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5d930d9b7677835e7a1ae7122893df15 = $(`<div id="html_5d930d9b7677835e7a1ae7122893df15" style="width: 100.0%; height: 100.0%;"><b>BDL — Bradley International Airport</b><br>             Cidade: Windsor Locks, CT<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 23.7%<br>             Atraso médio: 5.9 min</div>`)[0];
+                popup_c94d8a7a0d3415b2458b6349f75db3f2.setContent(html_5d930d9b7677835e7a1ae7122893df15);
+            
+        
+
+        circle_marker_c6cc2b1572b2c87c5d1eae8601510c2e.bindPopup(popup_c94d8a7a0d3415b2458b6349f75db3f2)
+        ;
+
+        
+    
+    
+            var circle_marker_120f8469b2ea0b987929e41fb116d7ca = L.circleMarker(
+                [33.56294, -86.75355],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_804fd104bef3e7dd5112f0dc6a263c65 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0d33f42c1c40c265ff5d0da428df1730 = $(`<div id="html_0d33f42c1c40c265ff5d0da428df1730" style="width: 100.0%; height: 100.0%;"><b>BHM — Birmingham-Shuttlesworth International Airport</b><br>             Cidade: Birmingham, AL<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 19.4%<br>             Atraso médio: 6.1 min</div>`)[0];
+                popup_804fd104bef3e7dd5112f0dc6a263c65.setContent(html_0d33f42c1c40c265ff5d0da428df1730);
+            
+        
+
+        circle_marker_120f8469b2ea0b987929e41fb116d7ca.bindPopup(popup_804fd104bef3e7dd5112f0dc6a263c65)
+        ;
+
+        
+    
+    
+            var circle_marker_789b48f18162c59389cb05aa534b3e8c = L.circleMarker(
+                [46.77411, -100.74672],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_f63640f2620c253f7903a842ab296e9c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2fa7e008d87062ef3804572ea73f8343 = $(`<div id="html_2fa7e008d87062ef3804572ea73f8343" style="width: 100.0%; height: 100.0%;"><b>BIS — Bismarck Municipal Airport</b><br>             Cidade: Bismarck, ND<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 26.0%<br>             Atraso médio: 13.5 min</div>`)[0];
+                popup_f63640f2620c253f7903a842ab296e9c.setContent(html_2fa7e008d87062ef3804572ea73f8343);
+            
+        
+
+        circle_marker_789b48f18162c59389cb05aa534b3e8c.bindPopup(popup_f63640f2620c253f7903a842ab296e9c)
+        ;
+
+        
+    
+    
+            var circle_marker_11f7f8e8c09514c0899e96400293cc51 = L.circleMarker(
+                [36.12448, -86.67818],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_3d99f539d661dab11ee14f09bd2b0dcb = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_65871ac02af5726831d2176aaac0ac7f = $(`<div id="html_65871ac02af5726831d2176aaac0ac7f" style="width: 100.0%; height: 100.0%;"><b>BNA — Nashville International Airport</b><br>             Cidade: Nashville, TN<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 21.2%<br>             Atraso médio: 6.1 min</div>`)[0];
+                popup_3d99f539d661dab11ee14f09bd2b0dcb.setContent(html_65871ac02af5726831d2176aaac0ac7f);
+            
+        
+
+        circle_marker_11f7f8e8c09514c0899e96400293cc51.bindPopup(popup_3d99f539d661dab11ee14f09bd2b0dcb)
+        ;
+
+        
+    
+    
+            var circle_marker_7415bdef559eb731fd4f85e72f80233d = L.circleMarker(
+                [43.56444, -116.22278],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_6e22559e09b55e271d280bd263209bea = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0d584f5856031c0d2fc2be551069de0d = $(`<div id="html_0d584f5856031c0d2fc2be551069de0d" style="width: 100.0%; height: 100.0%;"><b>BOI — Boise Airport (Boise Air Terminal)</b><br>             Cidade: Boise, ID<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 19.6%<br>             Atraso médio: 6.6 min</div>`)[0];
+                popup_6e22559e09b55e271d280bd263209bea.setContent(html_0d584f5856031c0d2fc2be551069de0d);
+            
+        
+
+        circle_marker_7415bdef559eb731fd4f85e72f80233d.bindPopup(popup_6e22559e09b55e271d280bd263209bea)
+        ;
+
+        
+    
+    
+            var circle_marker_d114497b0bd03126f89b9c01edbf2243 = L.circleMarker(
+                [42.36435, -71.00518],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_7340a4eceefaad0c2783314c0f619831 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_72a738d5036f77a1ef42dfe96eef9920 = $(`<div id="html_72a738d5036f77a1ef42dfe96eef9920" style="width: 100.0%; height: 100.0%;"><b>BOS — Gen. Edward Lawrence Logan International Airport</b><br>             Cidade: Boston, MA<br>             Cluster: Crítico (33%)<br>             Taxa de atraso: 32.4%<br>             Atraso médio: 13.8 min</div>`)[0];
+                popup_7340a4eceefaad0c2783314c0f619831.setContent(html_72a738d5036f77a1ef42dfe96eef9920);
+            
+        
+
+        circle_marker_d114497b0bd03126f89b9c01edbf2243.bindPopup(popup_7340a4eceefaad0c2783314c0f619831)
+        ;
+
+        
+    
+    
+            var circle_marker_7e2a07b75b22bc2e8dbae8f7400809b1 = L.circleMarker(
+                [30.53316, -91.14963],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_c67ed443b40f39c0bd81ff715692113a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a8f165229d6630ff252633024489c631 = $(`<div id="html_a8f165229d6630ff252633024489c631" style="width: 100.0%; height: 100.0%;"><b>BTR — Baton Rouge Metropolitan Airport</b><br>             Cidade: Baton Rouge, LA<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 24.0%<br>             Atraso médio: 12.4 min</div>`)[0];
+                popup_c67ed443b40f39c0bd81ff715692113a.setContent(html_a8f165229d6630ff252633024489c631);
+            
+        
+
+        circle_marker_7e2a07b75b22bc2e8dbae8f7400809b1.bindPopup(popup_c67ed443b40f39c0bd81ff715692113a)
+        ;
+
+        
+    
+    
+            var circle_marker_69c8f21f05a305187007ce16a1a8b887 = L.circleMarker(
+                [42.94052, -78.73217],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_4973d7081f9036c3a3518aaac28225c2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2087673d9e9db6783b9188ea96bd63e9 = $(`<div id="html_2087673d9e9db6783b9188ea96bd63e9" style="width: 100.0%; height: 100.0%;"><b>BUF — Buffalo Niagara International Airport</b><br>             Cidade: Buffalo, NY<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 24.0%<br>             Atraso médio: 8.0 min</div>`)[0];
+                popup_4973d7081f9036c3a3518aaac28225c2.setContent(html_2087673d9e9db6783b9188ea96bd63e9);
+            
+        
+
+        circle_marker_69c8f21f05a305187007ce16a1a8b887.bindPopup(popup_4973d7081f9036c3a3518aaac28225c2)
+        ;
+
+        
+    
+    
+            var circle_marker_a535b575f6fbe7a46be7b22dde9b6e0b = L.circleMarker(
+                [34.20062, -118.3585],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_a383483f7f6162c832ac8de504481df7 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c251a9a546d68e8bfd017ba019b044a3 = $(`<div id="html_c251a9a546d68e8bfd017ba019b044a3" style="width: 100.0%; height: 100.0%;"><b>BUR — Bob Hope Airport (Hollywood Burbank Airport)</b><br>             Cidade: Burbank, CA<br>             Cluster: Excelente (16%)<br>             Taxa de atraso: 16.2%<br>             Atraso médio: 4.5 min</div>`)[0];
+                popup_a383483f7f6162c832ac8de504481df7.setContent(html_c251a9a546d68e8bfd017ba019b044a3);
+            
+        
+
+        circle_marker_a535b575f6fbe7a46be7b22dde9b6e0b.bindPopup(popup_a383483f7f6162c832ac8de504481df7)
+        ;
+
+        
+    
+    
+            var circle_marker_bddb2ef8318944525618841c899c905d = L.circleMarker(
+                [39.1754, -76.6682],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_a52eb2a53f8b6db618cf8ce3e2a1873d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_92e162756cf6497f13d078672425507c = $(`<div id="html_92e162756cf6497f13d078672425507c" style="width: 100.0%; height: 100.0%;"><b>BWI — Baltimore-Washington International Airport</b><br>             Cidade: Baltimore, MD<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 26.1%<br>             Atraso médio: 9.3 min</div>`)[0];
+                popup_a52eb2a53f8b6db618cf8ce3e2a1873d.setContent(html_92e162756cf6497f13d078672425507c);
+            
+        
+
+        circle_marker_bddb2ef8318944525618841c899c905d.bindPopup(popup_a52eb2a53f8b6db618cf8ce3e2a1873d)
+        ;
+
+        
+    
+    
+            var circle_marker_581091bcaef85903467c7ac2a2587c53 = L.circleMarker(
+                [45.7769, -111.15301],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_050b550abe3c37e4de8b969b9c6fb42d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b80875dc0f44b1bd5c6e8546ce2ee311 = $(`<div id="html_b80875dc0f44b1bd5c6e8546ce2ee311" style="width: 100.0%; height: 100.0%;"><b>BZN — Bozeman Yellowstone International Airport (Gallatin Field Airport)</b><br>             Cidade: Bozeman, MT<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 19.3%<br>             Atraso médio: 5.7 min</div>`)[0];
+                popup_050b550abe3c37e4de8b969b9c6fb42d.setContent(html_b80875dc0f44b1bd5c6e8546ce2ee311);
+            
+        
+
+        circle_marker_581091bcaef85903467c7ac2a2587c53.bindPopup(popup_050b550abe3c37e4de8b969b9c6fb42d)
+        ;
+
+        
+    
+    
+            var circle_marker_5f71120755b545591530270804bf8d13 = L.circleMarker(
+                [33.93884, -81.11954],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_183ddf7009399a8bd12b6fb7808c26a7 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ea1c0df1cf85d04bff1d309608872917 = $(`<div id="html_ea1c0df1cf85d04bff1d309608872917" style="width: 100.0%; height: 100.0%;"><b>CAE — Columbia Metropolitan Airport</b><br>             Cidade: Columbia, SC<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 24.7%<br>             Atraso médio: 12.5 min</div>`)[0];
+                popup_183ddf7009399a8bd12b6fb7808c26a7.setContent(html_ea1c0df1cf85d04bff1d309608872917);
+            
+        
+
+        circle_marker_5f71120755b545591530270804bf8d13.bindPopup(popup_183ddf7009399a8bd12b6fb7808c26a7)
+        ;
+
+        
+    
+    
+            var circle_marker_bb4c388362964ae45e24da9157799fd9 = L.circleMarker(
+                [40.91631, -81.44247],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_083d02d1206c13ed82db83ffa938d5c9 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_862439dbc94344fe3c412fcb8e1d1297 = $(`<div id="html_862439dbc94344fe3c412fcb8e1d1297" style="width: 100.0%; height: 100.0%;"><b>CAK — Akron-Canton Regional Airport</b><br>             Cidade: Akron, OH<br>             Cluster: Excelente (16%)<br>             Taxa de atraso: 18.3%<br>             Atraso médio: 1.5 min</div>`)[0];
+                popup_083d02d1206c13ed82db83ffa938d5c9.setContent(html_862439dbc94344fe3c412fcb8e1d1297);
+            
+        
+
+        circle_marker_bb4c388362964ae45e24da9157799fd9.bindPopup(popup_083d02d1206c13ed82db83ffa938d5c9)
+        ;
+
+        
+    
+    
+            var circle_marker_840cc7ba8cdd442f3770421a43d97e3c = L.circleMarker(
+                [35.03527, -85.20379],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_53e0e25e55f325ad2e94aa449c8aa570 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_374763f50f2e6effc949c4259a2fc996 = $(`<div id="html_374763f50f2e6effc949c4259a2fc996" style="width: 100.0%; height: 100.0%;"><b>CHA — Chattanooga Metropolitan Airport (Lovell Field)</b><br>             Cidade: Chattanooga, TN<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 20.6%<br>             Atraso médio: 3.8 min</div>`)[0];
+                popup_53e0e25e55f325ad2e94aa449c8aa570.setContent(html_374763f50f2e6effc949c4259a2fc996);
+            
+        
+
+        circle_marker_840cc7ba8cdd442f3770421a43d97e3c.bindPopup(popup_53e0e25e55f325ad2e94aa449c8aa570)
+        ;
+
+        
+    
+    
+            var circle_marker_5aac048845b1401ba7b070571ecda837 = L.circleMarker(
+                [32.89865, -80.04051],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_965e4c7e1bdfe38fcf54dec34dbad04e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_420fce32460967e0601f4f2ff58ef16b = $(`<div id="html_420fce32460967e0601f4f2ff58ef16b" style="width: 100.0%; height: 100.0%;"><b>CHS — Charleston International Airport/Charleston AFB</b><br>             Cidade: Charleston, SC<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 18.4%<br>             Atraso médio: 5.2 min</div>`)[0];
+                popup_965e4c7e1bdfe38fcf54dec34dbad04e.setContent(html_420fce32460967e0601f4f2ff58ef16b);
+            
+        
+
+        circle_marker_5aac048845b1401ba7b070571ecda837.bindPopup(popup_965e4c7e1bdfe38fcf54dec34dbad04e)
+        ;
+
+        
+    
+    
+            var circle_marker_5e263800bb9b7f1c8702cacb339528ab = L.circleMarker(
+                [41.88459, -91.71087],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_7a00516669af3d9d121dd4052c2cc7cf = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f106196ba03d1eeb9fa8ade7e960bf94 = $(`<div id="html_f106196ba03d1eeb9fa8ade7e960bf94" style="width: 100.0%; height: 100.0%;"><b>CID — The Eastern Iowa Airport</b><br>             Cidade: Cedar Rapids, IA<br>             Cluster: Crítico (33%)<br>             Taxa de atraso: 34.8%<br>             Atraso médio: 21.4 min</div>`)[0];
+                popup_7a00516669af3d9d121dd4052c2cc7cf.setContent(html_f106196ba03d1eeb9fa8ade7e960bf94);
+            
+        
+
+        circle_marker_5e263800bb9b7f1c8702cacb339528ab.bindPopup(popup_7a00516669af3d9d121dd4052c2cc7cf)
+        ;
+
+        
+    
+    
+            var circle_marker_3fef816357a897aa26b950e643a43bb5 = L.circleMarker(
+                [41.41089, -81.8494],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_02e79757bcc36718c01f65343a46edee = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0bda35c5b15da17dc2d9e56d82c61d30 = $(`<div id="html_0bda35c5b15da17dc2d9e56d82c61d30" style="width: 100.0%; height: 100.0%;"><b>CLE — Cleveland Hopkins International Airport</b><br>             Cidade: Cleveland, OH<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 25.2%<br>             Atraso médio: 9.0 min</div>`)[0];
+                popup_02e79757bcc36718c01f65343a46edee.setContent(html_0bda35c5b15da17dc2d9e56d82c61d30);
+            
+        
+
+        circle_marker_3fef816357a897aa26b950e643a43bb5.bindPopup(popup_02e79757bcc36718c01f65343a46edee)
+        ;
+
+        
+    
+    
+            var circle_marker_56c7a94dc7932ab8253b55366795ed31 = L.circleMarker(
+                [35.21401, -80.94313],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_547b6860084b114c19eb9887f6ea51b9 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_15d2030e8eb174761fb1470f0f803984 = $(`<div id="html_15d2030e8eb174761fb1470f0f803984" style="width: 100.0%; height: 100.0%;"><b>CLT — Charlotte Douglas International Airport</b><br>             Cidade: Charlotte, NC<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 21.3%<br>             Atraso médio: 5.7 min</div>`)[0];
+                popup_547b6860084b114c19eb9887f6ea51b9.setContent(html_15d2030e8eb174761fb1470f0f803984);
+            
+        
+
+        circle_marker_56c7a94dc7932ab8253b55366795ed31.bindPopup(popup_547b6860084b114c19eb9887f6ea51b9)
+        ;
+
+        
+    
+    
+            var circle_marker_cb336d6885e18f74ba0e810524ab5b53 = L.circleMarker(
+                [39.99799, -82.89188],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_42c911174fb865c8bc4317c9c6e977c5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_be11c4dbfa1777e0eb49f9a557b32ccc = $(`<div id="html_be11c4dbfa1777e0eb49f9a557b32ccc" style="width: 100.0%; height: 100.0%;"><b>CMH — Port Columbus International Airport</b><br>             Cidade: Columbus, OH<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 26.6%<br>             Atraso médio: 10.0 min</div>`)[0];
+                popup_42c911174fb865c8bc4317c9c6e977c5.setContent(html_be11c4dbfa1777e0eb49f9a557b32ccc);
+            
+        
+
+        circle_marker_cb336d6885e18f74ba0e810524ab5b53.bindPopup(popup_42c911174fb865c8bc4317c9c6e977c5)
+        ;
+
+        
+    
+    
+            var circle_marker_560689d0f0d0fc8d00e653f6669c21fd = L.circleMarker(
+                [38.80581, -104.70025],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_991be702c3f6242a53320c23eea3fb79 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e427644caafe5c5cde3a09cebf714403 = $(`<div id="html_e427644caafe5c5cde3a09cebf714403" style="width: 100.0%; height: 100.0%;"><b>COS — City of Colorado Springs Municipal Airport</b><br>             Cidade: Colorado Springs, CO<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 23.2%<br>             Atraso médio: 12.1 min</div>`)[0];
+                popup_991be702c3f6242a53320c23eea3fb79.setContent(html_e427644caafe5c5cde3a09cebf714403);
+            
+        
+
+        circle_marker_560689d0f0d0fc8d00e653f6669c21fd.bindPopup(popup_991be702c3f6242a53320c23eea3fb79)
+        ;
+
+        
+    
+    
+            var circle_marker_49d7466379dc1e656e513c10d3a31b2a = L.circleMarker(
+                [27.77036, -97.50122],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_54f0cfc38f870b09554bb0bfd2897eea = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7dab6e81b505556ea9dab44774299489 = $(`<div id="html_7dab6e81b505556ea9dab44774299489" style="width: 100.0%; height: 100.0%;"><b>CRP — Corpus Christi International Airport</b><br>             Cidade: Corpus Christi, TX<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 22.0%<br>             Atraso médio: 8.3 min</div>`)[0];
+                popup_54f0cfc38f870b09554bb0bfd2897eea.setContent(html_7dab6e81b505556ea9dab44774299489);
+            
+        
+
+        circle_marker_49d7466379dc1e656e513c10d3a31b2a.bindPopup(popup_54f0cfc38f870b09554bb0bfd2897eea)
+        ;
+
+        
+    
+    
+            var circle_marker_0f852acbeb909f0b014288af91300d6e = L.circleMarker(
+                [39.04614, -84.66217],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_e715774d99c41d2a01b77855a98e8be1 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1b06e4d2844949627cd13ad8fd018827 = $(`<div id="html_1b06e4d2844949627cd13ad8fd018827" style="width: 100.0%; height: 100.0%;"><b>CVG — Cincinnati/Northern Kentucky International Airport</b><br>             Cidade: Covington, KY<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 26.7%<br>             Atraso médio: 9.6 min</div>`)[0];
+                popup_e715774d99c41d2a01b77855a98e8be1.setContent(html_1b06e4d2844949627cd13ad8fd018827);
+            
+        
+
+        circle_marker_0f852acbeb909f0b014288af91300d6e.bindPopup(popup_e715774d99c41d2a01b77855a98e8be1)
+        ;
+
+        
+    
+    
+            var circle_marker_c5a9a7e2bb4082258867d60723c7d3c4 = L.circleMarker(
+                [32.84711, -96.85177],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_a8029c26d5ed1434afc68c81b051aa3d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b5aa05ca2b44cbfe44453e4cbd8d9ac3 = $(`<div id="html_b5aa05ca2b44cbfe44453e4cbd8d9ac3" style="width: 100.0%; height: 100.0%;"><b>DAL — Dallas Love Field</b><br>             Cidade: Dallas, TX<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 20.9%<br>             Atraso médio: 5.1 min</div>`)[0];
+                popup_a8029c26d5ed1434afc68c81b051aa3d.setContent(html_b5aa05ca2b44cbfe44453e4cbd8d9ac3);
+            
+        
+
+        circle_marker_c5a9a7e2bb4082258867d60723c7d3c4.bindPopup(popup_a8029c26d5ed1434afc68c81b051aa3d)
+        ;
+
+        
+    
+    
+            var circle_marker_688061dc139a187ada52586787fc4862 = L.circleMarker(
+                [39.90238, -84.21938],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_cf988d44ea029bc1b87104d05668331e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b019e2f85b1a1f1e044137a505c5eced = $(`<div id="html_b019e2f85b1a1f1e044137a505c5eced" style="width: 100.0%; height: 100.0%;"><b>DAY — James M. Cox Dayton International Airport</b><br>             Cidade: Dayton, OH<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 23.6%<br>             Atraso médio: 7.1 min</div>`)[0];
+                popup_cf988d44ea029bc1b87104d05668331e.setContent(html_b019e2f85b1a1f1e044137a505c5eced);
+            
+        
+
+        circle_marker_688061dc139a187ada52586787fc4862.bindPopup(popup_cf988d44ea029bc1b87104d05668331e)
+        ;
+
+        
+    
+    
+            var circle_marker_e9c3fcfffddfe7e8285663d0015db74c = L.circleMarker(
+                [38.85208, -77.03772],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_febaa310d6e8619c43f83545c0c0de6c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_007240041e110d7a08ffe85c846c7521 = $(`<div id="html_007240041e110d7a08ffe85c846c7521" style="width: 100.0%; height: 100.0%;"><b>DCA — Ronald Reagan Washington National Airport</b><br>             Cidade: Arlington, VA<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 21.9%<br>             Atraso médio: 5.4 min</div>`)[0];
+                popup_febaa310d6e8619c43f83545c0c0de6c.setContent(html_007240041e110d7a08ffe85c846c7521);
+            
+        
+
+        circle_marker_e9c3fcfffddfe7e8285663d0015db74c.bindPopup(popup_febaa310d6e8619c43f83545c0c0de6c)
+        ;
+
+        
+    
+    
+            var circle_marker_808056e5bd1e95af51a876e16dda0cc1 = L.circleMarker(
+                [39.85841, -104.667],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_ba3cc0522857bce9f7065f30b240deea = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_bb6007adbd70542ba1ffb4e27e72d6b8 = $(`<div id="html_bb6007adbd70542ba1ffb4e27e72d6b8" style="width: 100.0%; height: 100.0%;"><b>DEN — Denver International Airport</b><br>             Cidade: Denver, CO<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 30.2%<br>             Atraso médio: 12.2 min</div>`)[0];
+                popup_ba3cc0522857bce9f7065f30b240deea.setContent(html_bb6007adbd70542ba1ffb4e27e72d6b8);
+            
+        
+
+        circle_marker_808056e5bd1e95af51a876e16dda0cc1.bindPopup(popup_ba3cc0522857bce9f7065f30b240deea)
+        ;
+
+        
+    
+    
+            var circle_marker_84efac9ff7723569af61271253006f69 = L.circleMarker(
+                [32.89595, -97.0372],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_4e863ad924277aeb1e504983f6fdacce = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5cc193d40e46292a1ba79654b9f90d93 = $(`<div id="html_5cc193d40e46292a1ba79654b9f90d93" style="width: 100.0%; height: 100.0%;"><b>DFW — Dallas/Fort Worth International Airport</b><br>             Cidade: Dallas-Fort Worth, TX<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 26.9%<br>             Atraso médio: 11.8 min</div>`)[0];
+                popup_4e863ad924277aeb1e504983f6fdacce.setContent(html_5cc193d40e46292a1ba79654b9f90d93);
+            
+        
+
+        circle_marker_84efac9ff7723569af61271253006f69.bindPopup(popup_4e863ad924277aeb1e504983f6fdacce)
+        ;
+
+        
+    
+    
+            var circle_marker_f01553c10b332817ab93cc08c3720d30 = L.circleMarker(
+                [41.53493, -93.66068],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_1a4272ee87fc40e4b9b5ae04c08ae822 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2df1aad90275e2f44534a0e496c126be = $(`<div id="html_2df1aad90275e2f44534a0e496c126be" style="width: 100.0%; height: 100.0%;"><b>DSM — Des Moines International Airport</b><br>             Cidade: Des Moines, IA<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 29.1%<br>             Atraso médio: 14.4 min</div>`)[0];
+                popup_1a4272ee87fc40e4b9b5ae04c08ae822.setContent(html_2df1aad90275e2f44534a0e496c126be);
+            
+        
+
+        circle_marker_f01553c10b332817ab93cc08c3720d30.bindPopup(popup_1a4272ee87fc40e4b9b5ae04c08ae822)
+        ;
+
+        
+    
+    
+            var circle_marker_2c188bcf06d757abee0791069474630b = L.circleMarker(
+                [42.21206, -83.34884],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_b1c889aebf3f4657291bacd7e636cbe4 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f2d7025a1429dded16c79a74e53fc131 = $(`<div id="html_f2d7025a1429dded16c79a74e53fc131" style="width: 100.0%; height: 100.0%;"><b>DTW — Detroit Metropolitan Airport</b><br>             Cidade: Detroit, MI<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 28.3%<br>             Atraso médio: 9.7 min</div>`)[0];
+                popup_b1c889aebf3f4657291bacd7e636cbe4.setContent(html_f2d7025a1429dded16c79a74e53fc131);
+            
+        
+
+        circle_marker_2c188bcf06d757abee0791069474630b.bindPopup(popup_b1c889aebf3f4657291bacd7e636cbe4)
+        ;
+
+        
+    
+    
+            var circle_marker_dd851faf96a32d9978e8b40bd31633ae = L.circleMarker(
+                [39.64257, -106.9177],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_a6e0b3a7f1d070da4904a9eaf8df7769 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8c196e3ef9090d9ebef400548bd1d479 = $(`<div id="html_8c196e3ef9090d9ebef400548bd1d479" style="width: 100.0%; height: 100.0%;"><b>EGE — Eagle County Regional Airport</b><br>             Cidade: Eagle, CO<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 23.2%<br>             Atraso médio: 12.0 min</div>`)[0];
+                popup_a6e0b3a7f1d070da4904a9eaf8df7769.setContent(html_8c196e3ef9090d9ebef400548bd1d479);
+            
+        
+
+        circle_marker_dd851faf96a32d9978e8b40bd31633ae.bindPopup(popup_a6e0b3a7f1d070da4904a9eaf8df7769)
+        ;
+
+        
+    
+    
+            var circle_marker_786f7a30fd98b044fc64024a025f1207 = L.circleMarker(
+                [31.80667, -106.37781],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_1768ec729a33c18fb4893a37669a7d2e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e301e8e94b5ace285d60a0abedea04a9 = $(`<div id="html_e301e8e94b5ace285d60a0abedea04a9" style="width: 100.0%; height: 100.0%;"><b>ELP — El Paso International Airport</b><br>             Cidade: El Paso, TX<br>             Cluster: Excelente (16%)<br>             Taxa de atraso: 18.2%<br>             Atraso médio: 5.6 min</div>`)[0];
+                popup_1768ec729a33c18fb4893a37669a7d2e.setContent(html_e301e8e94b5ace285d60a0abedea04a9);
+            
+        
+
+        circle_marker_786f7a30fd98b044fc64024a025f1207.bindPopup(popup_1768ec729a33c18fb4893a37669a7d2e)
+        ;
+
+        
+    
+    
+            var circle_marker_ab73cb35bba6aa1292e4ff3aa7ef2947 = L.circleMarker(
+                [44.12326, -123.21869],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_a8ee8ab0949a08daa6e63b2f1cb50a29 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a1739fb7815727203599e32df1e5187a = $(`<div id="html_a1739fb7815727203599e32df1e5187a" style="width: 100.0%; height: 100.0%;"><b>EUG — Eugene Airport (Mahlon Sweet Field)</b><br>             Cidade: Eugene, OR<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 18.2%<br>             Atraso médio: 4.7 min</div>`)[0];
+                popup_a8ee8ab0949a08daa6e63b2f1cb50a29.setContent(html_a1739fb7815727203599e32df1e5187a);
+            
+        
+
+        circle_marker_ab73cb35bba6aa1292e4ff3aa7ef2947.bindPopup(popup_a8ee8ab0949a08daa6e63b2f1cb50a29)
+        ;
+
+        
+    
+    
+            var circle_marker_4ce297cc6b15b667f83c47b973973862 = L.circleMarker(
+                [38.03799, -87.53063],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_d52d1025052234e49e9ccb4f89abbc50 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a7b58dbd0e34af4044c0d64f4a0e6114 = $(`<div id="html_a7b58dbd0e34af4044c0d64f4a0e6114" style="width: 100.0%; height: 100.0%;"><b>EVV — Evansville Regional Airport</b><br>             Cidade: Evansville, IN<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 33.7%<br>             Atraso médio: 16.5 min</div>`)[0];
+                popup_d52d1025052234e49e9ccb4f89abbc50.setContent(html_a7b58dbd0e34af4044c0d64f4a0e6114);
+            
+        
+
+        circle_marker_4ce297cc6b15b667f83c47b973973862.bindPopup(popup_d52d1025052234e49e9ccb4f89abbc50)
+        ;
+
+        
+    
+    
+            var circle_marker_e2d286c5fdee713d36d3da0919b326e8 = L.circleMarker(
+                [40.6925, -74.16866],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_e40f94f878e03db224dd3fdc2d7a724b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d450e92626a09dcc998a8096f1afbf67 = $(`<div id="html_d450e92626a09dcc998a8096f1afbf67" style="width: 100.0%; height: 100.0%;"><b>EWR — Newark Liberty International Airport</b><br>             Cidade: Newark, NJ<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 27.5%<br>             Atraso médio: 9.2 min</div>`)[0];
+                popup_e40f94f878e03db224dd3fdc2d7a724b.setContent(html_d450e92626a09dcc998a8096f1afbf67);
+            
+        
+
+        circle_marker_e2d286c5fdee713d36d3da0919b326e8.bindPopup(popup_e40f94f878e03db224dd3fdc2d7a724b)
+        ;
+
+        
+    
+    
+            var circle_marker_6ad37fb8926f30453504e2bfc6b7be40 = L.circleMarker(
+                [46.91935, -96.81499],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_949a0e1bea12a7a65107dcd002dcebe2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8a64ba8601f41ffe6526aff00435937f = $(`<div id="html_8a64ba8601f41ffe6526aff00435937f" style="width: 100.0%; height: 100.0%;"><b>FAR — Hector International Airport</b><br>             Cidade: Fargo, ND<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 26.9%<br>             Atraso médio: 11.3 min</div>`)[0];
+                popup_949a0e1bea12a7a65107dcd002dcebe2.setContent(html_8a64ba8601f41ffe6526aff00435937f);
+            
+        
+
+        circle_marker_6ad37fb8926f30453504e2bfc6b7be40.bindPopup(popup_949a0e1bea12a7a65107dcd002dcebe2)
+        ;
+
+        
+    
+    
+            var circle_marker_d6841f99eddf711b2b26171d5510bacf = L.circleMarker(
+                [36.77619, -119.71814],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_82d4a14151c9d02d719ceb7bbc6f77aa = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2052a98fe564b890c2998c4a18081f0e = $(`<div id="html_2052a98fe564b890c2998c4a18081f0e" style="width: 100.0%; height: 100.0%;"><b>FAT — Fresno Yosemite International Airport</b><br>             Cidade: Fresno, CA<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 23.8%<br>             Atraso médio: 13.4 min</div>`)[0];
+                popup_82d4a14151c9d02d719ceb7bbc6f77aa.setContent(html_2052a98fe564b890c2998c4a18081f0e);
+            
+        
+
+        circle_marker_d6841f99eddf711b2b26171d5510bacf.bindPopup(popup_82d4a14151c9d02d719ceb7bbc6f77aa)
+        ;
+
+        
+    
+    
+            var circle_marker_15da90a66b8b63dbba8229f08d9a7e80 = L.circleMarker(
+                [26.07258, -80.15275],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_69e7016331c9c77f3ac6e96da262b1b0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_acc7db5cad30d79a67ef87468566faac = $(`<div id="html_acc7db5cad30d79a67ef87468566faac" style="width: 100.0%; height: 100.0%;"><b>FLL — Fort Lauderdale-Hollywood International Airport</b><br>             Cidade: Ft. Lauderdale, FL<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 21.5%<br>             Atraso médio: 5.9 min</div>`)[0];
+                popup_69e7016331c9c77f3ac6e96da262b1b0.setContent(html_acc7db5cad30d79a67ef87468566faac);
+            
+        
+
+        circle_marker_15da90a66b8b63dbba8229f08d9a7e80.bindPopup(popup_69e7016331c9c77f3ac6e96da262b1b0)
+        ;
+
+        
+    
+    
+            var circle_marker_be53e18a5e2aed43c6811c6e095c8e37 = L.circleMarker(
+                [42.9655, -83.74346],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_1c8d3f820ec7adc2615a3e3b0557a7ed = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1b6afa8879aed970a9f937e011de1d38 = $(`<div id="html_1b6afa8879aed970a9f937e011de1d38" style="width: 100.0%; height: 100.0%;"><b>FNT — Bishop International Airport</b><br>             Cidade: Flint, MI<br>             Cluster: Excelente (16%)<br>             Taxa de atraso: 17.6%<br>             Atraso médio: -0.3 min</div>`)[0];
+                popup_1c8d3f820ec7adc2615a3e3b0557a7ed.setContent(html_1b6afa8879aed970a9f937e011de1d38);
+            
+        
+
+        circle_marker_be53e18a5e2aed43c6811c6e095c8e37.bindPopup(popup_1c8d3f820ec7adc2615a3e3b0557a7ed)
+        ;
+
+        
+    
+    
+            var circle_marker_7e154cf0cf7a100025f59cd5db63c659 = L.circleMarker(
+                [43.58135, -96.7417],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_4e5d313041c5ef26a74337dd7bab1c58 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_027130c7d39ece889cc3044565698402 = $(`<div id="html_027130c7d39ece889cc3044565698402" style="width: 100.0%; height: 100.0%;"><b>FSD — Sioux Falls Regional Airport</b><br>             Cidade: Sioux Falls, SD<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 29.1%<br>             Atraso médio: 14.5 min</div>`)[0];
+                popup_4e5d313041c5ef26a74337dd7bab1c58.setContent(html_027130c7d39ece889cc3044565698402);
+            
+        
+
+        circle_marker_7e154cf0cf7a100025f59cd5db63c659.bindPopup(popup_4e5d313041c5ef26a74337dd7bab1c58)
+        ;
+
+        
+    
+    
+            var circle_marker_3b63c081303b8e93f76a2c8e39fc327e = L.circleMarker(
+                [40.97847, -85.19515],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_722dd216261f2371c8b91f91689bac87 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_60ed6baccf25551302bf5a5d1dbcaf72 = $(`<div id="html_60ed6baccf25551302bf5a5d1dbcaf72" style="width: 100.0%; height: 100.0%;"><b>FWA — Fort Wayne International Airport</b><br>             Cidade: Fort Wayne, IN<br>             Cluster: Crítico (33%)<br>             Taxa de atraso: 34.5%<br>             Atraso médio: 18.1 min</div>`)[0];
+                popup_722dd216261f2371c8b91f91689bac87.setContent(html_60ed6baccf25551302bf5a5d1dbcaf72);
+            
+        
+
+        circle_marker_3b63c081303b8e93f76a2c8e39fc327e.bindPopup(popup_722dd216261f2371c8b91f91689bac87)
+        ;
+
+        
+    
+    
+            var circle_marker_5407b7c696a9025dea2372ba1d113d3e = L.circleMarker(
+                [47.61986, -117.53384],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_48b211a28535e255608b0ee548ca3fda = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_79f68329afa9d018d0f6800677997d79 = $(`<div id="html_79f68329afa9d018d0f6800677997d79" style="width: 100.0%; height: 100.0%;"><b>GEG — Spokane International Airport</b><br>             Cidade: Spokane, WA<br>             Cluster: Excelente (16%)<br>             Taxa de atraso: 12.6%<br>             Atraso médio: 1.2 min</div>`)[0];
+                popup_48b211a28535e255608b0ee548ca3fda.setContent(html_79f68329afa9d018d0f6800677997d79);
+            
+        
+
+        circle_marker_5407b7c696a9025dea2372ba1d113d3e.bindPopup(popup_48b211a28535e255608b0ee548ca3fda)
+        ;
+
+        
+    
+    
+            var circle_marker_a0f6e42ed0c45c11fc3e03125da001c5 = L.circleMarker(
+                [39.12241, -108.52673],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_0877ce903bf71d442c5e0021ce68ad3d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1280af2a195208ae1075d769c9eea6be = $(`<div id="html_1280af2a195208ae1075d769c9eea6be" style="width: 100.0%; height: 100.0%;"><b>GJT — Grand Junction Regional Airport (Walker Field)</b><br>             Cidade: Grand Junction, CO<br>             Cluster: Excelente (16%)<br>             Taxa de atraso: 13.4%<br>             Atraso médio: 2.8 min</div>`)[0];
+                popup_0877ce903bf71d442c5e0021ce68ad3d.setContent(html_1280af2a195208ae1075d769c9eea6be);
+            
+        
+
+        circle_marker_a0f6e42ed0c45c11fc3e03125da001c5.bindPopup(popup_0877ce903bf71d442c5e0021ce68ad3d)
+        ;
+
+        
+    
+    
+            var circle_marker_ad0ae60d60cda22b202ed714dc740e63 = L.circleMarker(
+                [30.40728, -89.07009],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_bd5224c3b6e55978e7a5f7ea2800edbc = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d5ecd00702bb07436d349fc91cf0dcb0 = $(`<div id="html_d5ecd00702bb07436d349fc91cf0dcb0" style="width: 100.0%; height: 100.0%;"><b>GPT — Gulfport-Biloxi International Airport</b><br>             Cidade: Gulfport-Biloxi, MS<br>             Cluster: Excelente (16%)<br>             Taxa de atraso: 13.0%<br>             Atraso médio: 0.1 min</div>`)[0];
+                popup_bd5224c3b6e55978e7a5f7ea2800edbc.setContent(html_d5ecd00702bb07436d349fc91cf0dcb0);
+            
+        
+
+        circle_marker_ad0ae60d60cda22b202ed714dc740e63.bindPopup(popup_bd5224c3b6e55978e7a5f7ea2800edbc)
+        ;
+
+        
+    
+    
+            var circle_marker_ab48447430d593cad4b89998ec303689 = L.circleMarker(
+                [44.48507, -88.12959],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_6ba0b9304fa5dc24040f2dd1b2ef3b39 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_208b7b066335a8a85c4d8fdc4d7901b5 = $(`<div id="html_208b7b066335a8a85c4d8fdc4d7901b5" style="width: 100.0%; height: 100.0%;"><b>GRB — Green Bay-Austin Straubel International Airport</b><br>             Cidade: Green Bay, WI<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 24.6%<br>             Atraso médio: 10.7 min</div>`)[0];
+                popup_6ba0b9304fa5dc24040f2dd1b2ef3b39.setContent(html_208b7b066335a8a85c4d8fdc4d7901b5);
+            
+        
+
+        circle_marker_ab48447430d593cad4b89998ec303689.bindPopup(popup_6ba0b9304fa5dc24040f2dd1b2ef3b39)
+        ;
+
+        
+    
+    
+            var circle_marker_75ff28ec8667c6ef50c4486be9eb387e = L.circleMarker(
+                [31.0649, -97.8278],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_d4d6bcea4421634eb18659d93dfcbd4a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_eabde1f9d054f4c1a7900f18d1b40b5d = $(`<div id="html_eabde1f9d054f4c1a7900f18d1b40b5d" style="width: 100.0%; height: 100.0%;"><b>GRK — Killeen-Fort Hood Regional Airport</b><br>             Cidade: Killeen, TX<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 25.4%<br>             Atraso médio: 11.1 min</div>`)[0];
+                popup_d4d6bcea4421634eb18659d93dfcbd4a.setContent(html_eabde1f9d054f4c1a7900f18d1b40b5d);
+            
+        
+
+        circle_marker_75ff28ec8667c6ef50c4486be9eb387e.bindPopup(popup_d4d6bcea4421634eb18659d93dfcbd4a)
+        ;
+
+        
+    
+    
+            var circle_marker_435c53fab128b3a6fb1fd167db024c53 = L.circleMarker(
+                [42.88082, -85.52277],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_49677717d42ff0a0864586ec054d7c6c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_b9351f21228cad0b498f289ac85d7ee5 = $(`<div id="html_b9351f21228cad0b498f289ac85d7ee5" style="width: 100.0%; height: 100.0%;"><b>GRR — Gerald R. Ford International Airport</b><br>             Cidade: Grand Rapids, MI<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 23.9%<br>             Atraso médio: 8.1 min</div>`)[0];
+                popup_49677717d42ff0a0864586ec054d7c6c.setContent(html_b9351f21228cad0b498f289ac85d7ee5);
+            
+        
+
+        circle_marker_435c53fab128b3a6fb1fd167db024c53.bindPopup(popup_49677717d42ff0a0864586ec054d7c6c)
+        ;
+
+        
+    
+    
+            var circle_marker_d2cb4d1f8170f2361f93fa58914796d9 = L.circleMarker(
+                [36.09775, -79.9373],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_03288e0104cad6526aed249b18c2db35 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4cb95681a7397a0705f44c6fabd88514 = $(`<div id="html_4cb95681a7397a0705f44c6fabd88514" style="width: 100.0%; height: 100.0%;"><b>GSO — Piedmont Triad International Airport</b><br>             Cidade: Greensboro, NC<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 26.5%<br>             Atraso médio: 11.4 min</div>`)[0];
+                popup_03288e0104cad6526aed249b18c2db35.setContent(html_4cb95681a7397a0705f44c6fabd88514);
+            
+        
+
+        circle_marker_d2cb4d1f8170f2361f93fa58914796d9.bindPopup(popup_03288e0104cad6526aed249b18c2db35)
+        ;
+
+        
+    
+    
+            var circle_marker_6a952f5bd6c83f5d9c88a71424fd4e92 = L.circleMarker(
+                [34.89567, -82.21886],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_3515c01bd23eefd5020611e5900f2766 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_70109c0af06a94a9afe016d8b0f4e95d = $(`<div id="html_70109c0af06a94a9afe016d8b0f4e95d" style="width: 100.0%; height: 100.0%;"><b>GSP — Greenville-Spartanburg International Airport</b><br>             Cidade: Greer, SC<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 20.9%<br>             Atraso médio: 6.5 min</div>`)[0];
+                popup_3515c01bd23eefd5020611e5900f2766.setContent(html_70109c0af06a94a9afe016d8b0f4e95d);
+            
+        
+
+        circle_marker_6a952f5bd6c83f5d9c88a71424fd4e92.bindPopup(popup_3515c01bd23eefd5020611e5900f2766)
+        ;
+
+        
+    
+    
+            var circle_marker_2f2abcae48af99a3097b30e689c710ad = L.circleMarker(
+                [21.31869, -157.92241],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_13a1781c0463d30bc97e40374068853c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_306cecc3622b1360e0aafbf4892e9a08 = $(`<div id="html_306cecc3622b1360e0aafbf4892e9a08" style="width: 100.0%; height: 100.0%;"><b>HNL — Honolulu International Airport</b><br>             Cidade: Honolulu, HI<br>             Cluster: Excelente (16%)<br>             Taxa de atraso: 12.7%<br>             Atraso médio: 2.5 min</div>`)[0];
+                popup_13a1781c0463d30bc97e40374068853c.setContent(html_306cecc3622b1360e0aafbf4892e9a08);
+            
+        
+
+        circle_marker_2f2abcae48af99a3097b30e689c710ad.bindPopup(popup_13a1781c0463d30bc97e40374068853c)
+        ;
+
+        
+    
+    
+            var circle_marker_faf85eb062c5ac800b78f8b6b29144a1 = L.circleMarker(
+                [29.64542, -95.27889],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_dd693b1de9bdffc0ebfe4ed62ae2c070 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_89aed2c412294f5668fb6a323348aa11 = $(`<div id="html_89aed2c412294f5668fb6a323348aa11" style="width: 100.0%; height: 100.0%;"><b>HOU — William P. Hobby Airport</b><br>             Cidade: Houston, TX<br>             Cluster: Excelente (16%)<br>             Taxa de atraso: 19.5%<br>             Atraso médio: 4.0 min</div>`)[0];
+                popup_dd693b1de9bdffc0ebfe4ed62ae2c070.setContent(html_89aed2c412294f5668fb6a323348aa11);
+            
+        
+
+        circle_marker_faf85eb062c5ac800b78f8b6b29144a1.bindPopup(popup_dd693b1de9bdffc0ebfe4ed62ae2c070)
+        ;
+
+        
+    
+    
+            var circle_marker_62a153ad8769ba76649fc57824c80571 = L.circleMarker(
+                [41.06696, -73.70757],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_786c915944a5002c0e406e94eba9ec55 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7a6297b376fdbf62540fed25e2a2dd93 = $(`<div id="html_7a6297b376fdbf62540fed25e2a2dd93" style="width: 100.0%; height: 100.0%;"><b>HPN — Westchester County Airport</b><br>             Cidade: White Plains, NY<br>             Cluster: Crítico (33%)<br>             Taxa de atraso: 34.4%<br>             Atraso médio: 18.5 min</div>`)[0];
+                popup_786c915944a5002c0e406e94eba9ec55.setContent(html_7a6297b376fdbf62540fed25e2a2dd93);
+            
+        
+
+        circle_marker_62a153ad8769ba76649fc57824c80571.bindPopup(popup_786c915944a5002c0e406e94eba9ec55)
+        ;
+
+        
+    
+    
+            var circle_marker_2b038bd916b4e1a3cd782244b2e49cec = L.circleMarker(
+                [26.22851, -97.65439],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_7135396437e61e1c1c9f3fa855decefe = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_26cf1a5b16a97ae20ef33882f3eb07e2 = $(`<div id="html_26cf1a5b16a97ae20ef33882f3eb07e2" style="width: 100.0%; height: 100.0%;"><b>HRL — Valley International Airport</b><br>             Cidade: Harlingen, TX<br>             Cluster: Excelente (16%)<br>             Taxa de atraso: 10.1%<br>             Atraso médio: -0.4 min</div>`)[0];
+                popup_7135396437e61e1c1c9f3fa855decefe.setContent(html_26cf1a5b16a97ae20ef33882f3eb07e2);
+            
+        
+
+        circle_marker_2b038bd916b4e1a3cd782244b2e49cec.bindPopup(popup_7135396437e61e1c1c9f3fa855decefe)
+        ;
+
+        
+    
+    
+            var circle_marker_636f8c394bfcdcf1eb26c58d17166796 = L.circleMarker(
+                [34.64045, -86.77311],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_03250f667cec20eedc4fbb34f816a6e9 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ef83b312b9aaa9ec57142a8e2507538f = $(`<div id="html_ef83b312b9aaa9ec57142a8e2507538f" style="width: 100.0%; height: 100.0%;"><b>HSV — Huntsville International Airport</b><br>             Cidade: Huntsville, AL<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 19.9%<br>             Atraso médio: 4.1 min</div>`)[0];
+                popup_03250f667cec20eedc4fbb34f816a6e9.setContent(html_ef83b312b9aaa9ec57142a8e2507538f);
+            
+        
+
+        circle_marker_636f8c394bfcdcf1eb26c58d17166796.bindPopup(popup_03250f667cec20eedc4fbb34f816a6e9)
+        ;
+
+        
+    
+    
+            var circle_marker_65a925920e39506a231f78ac7dd47a6c = L.circleMarker(
+                [38.94453, -77.45581],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_5b9408f9d950730e518cc6039156c545 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_cd1feb55dd394e78001622c08ad0d38e = $(`<div id="html_cd1feb55dd394e78001622c08ad0d38e" style="width: 100.0%; height: 100.0%;"><b>IAD — Washington Dulles International Airport</b><br>             Cidade: Chantilly, VA<br>             Cluster: Crítico (33%)<br>             Taxa de atraso: 28.7%<br>             Atraso médio: 13.5 min</div>`)[0];
+                popup_5b9408f9d950730e518cc6039156c545.setContent(html_cd1feb55dd394e78001622c08ad0d38e);
+            
+        
+
+        circle_marker_65a925920e39506a231f78ac7dd47a6c.bindPopup(popup_5b9408f9d950730e518cc6039156c545)
+        ;
+
+        
+    
+    
+            var circle_marker_f304c0fb966f317b708b662c138ac22f = L.circleMarker(
+                [29.98047, -95.33972],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_5d27fab8843b83a478884546a1b30a4c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1bd2adc32abfdcbbab22d463056b88c5 = $(`<div id="html_1bd2adc32abfdcbbab22d463056b88c5" style="width: 100.0%; height: 100.0%;"><b>IAH — George Bush Intercontinental Airport</b><br>             Cidade: Houston, TX<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 20.3%<br>             Atraso médio: 5.5 min</div>`)[0];
+                popup_5d27fab8843b83a478884546a1b30a4c.setContent(html_1bd2adc32abfdcbbab22d463056b88c5);
+            
+        
+
+        circle_marker_f304c0fb966f317b708b662c138ac22f.bindPopup(popup_5d27fab8843b83a478884546a1b30a4c)
+        ;
+
+        
+    
+    
+            var circle_marker_5fe0273fbefbcdb84e4edc448be9ccc0 = L.circleMarker(
+                [37.64996, -97.43305],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_3fedb083cb27b951fcb2601b2d8e8b26 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0d5cebac189ddde1ad743eeb18e1c16d = $(`<div id="html_0d5cebac189ddde1ad743eeb18e1c16d" style="width: 100.0%; height: 100.0%;"><b>ICT — Wichita Dwight D. Eisenhower National Airport (Wichita Mid-Continent Airport)</b><br>             Cidade: Wichita, KS<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 24.4%<br>             Atraso médio: 11.6 min</div>`)[0];
+                popup_3fedb083cb27b951fcb2601b2d8e8b26.setContent(html_0d5cebac189ddde1ad743eeb18e1c16d);
+            
+        
+
+        circle_marker_5fe0273fbefbcdb84e4edc448be9ccc0.bindPopup(popup_3fedb083cb27b951fcb2601b2d8e8b26)
+        ;
+
+        
+    
+    
+            var circle_marker_2e7b070a250734c63d501fc1030aac01 = L.circleMarker(
+                [39.71733, -86.29438],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_19fc8225ed35bafb5224746ceb223dde = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7c6e96e07ace2ee40a967821345a55b0 = $(`<div id="html_7c6e96e07ace2ee40a967821345a55b0" style="width: 100.0%; height: 100.0%;"><b>IND — Indianapolis International Airport</b><br>             Cidade: Indianapolis, IN<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 22.3%<br>             Atraso médio: 5.6 min</div>`)[0];
+                popup_19fc8225ed35bafb5224746ceb223dde.setContent(html_7c6e96e07ace2ee40a967821345a55b0);
+            
+        
+
+        circle_marker_2e7b070a250734c63d501fc1030aac01.bindPopup(popup_19fc8225ed35bafb5224746ceb223dde)
+        ;
+
+        
+    
+    
+            var circle_marker_58302f808648bc26ee7a1aed5438c3b3 = L.circleMarker(
+                [48.17794, -103.64235],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_f6e5663042da210b51da2c89b5aae2f5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_eb0259b0cbd59f53c63524a91ab4f5f2 = $(`<div id="html_eb0259b0cbd59f53c63524a91ab4f5f2" style="width: 100.0%; height: 100.0%;"><b>ISN — Sloulin Field International Airport</b><br>             Cidade: Williston, ND<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 22.2%<br>             Atraso médio: 9.1 min</div>`)[0];
+                popup_f6e5663042da210b51da2c89b5aae2f5.setContent(html_eb0259b0cbd59f53c63524a91ab4f5f2);
+            
+        
+
+        circle_marker_58302f808648bc26ee7a1aed5438c3b3.bindPopup(popup_f6e5663042da210b51da2c89b5aae2f5)
+        ;
+
+        
+    
+    
+            var circle_marker_0bf7f3fa254aae7bc4c10a486d41bf81 = L.circleMarker(
+                [40.79524, -73.10021],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_0eaa1cd877d2ad0afb5b6b4288c06f97 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e0abbce62625e7d6e946060b291ec50e = $(`<div id="html_e0abbce62625e7d6e946060b291ec50e" style="width: 100.0%; height: 100.0%;"><b>ISP — Long Island MacArthur Airport</b><br>             Cidade: Islip, NY<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 23.2%<br>             Atraso médio: 6.9 min</div>`)[0];
+                popup_0eaa1cd877d2ad0afb5b6b4288c06f97.setContent(html_e0abbce62625e7d6e946060b291ec50e);
+            
+        
+
+        circle_marker_0bf7f3fa254aae7bc4c10a486d41bf81.bindPopup(popup_0eaa1cd877d2ad0afb5b6b4288c06f97)
+        ;
+
+        
+    
+    
+            var circle_marker_508b124a15421d73e77d46e3dd1fa338 = L.circleMarker(
+                [19.72026, -155.04847],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_60de8bcf47aa57932c4cc60ffe360cd9 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5e79fcd38f198048b5d1a94c8b750689 = $(`<div id="html_5e79fcd38f198048b5d1a94c8b750689" style="width: 100.0%; height: 100.0%;"><b>ITO — Hilo International Airport</b><br>             Cidade: Hilo, HI<br>             Cluster: Excelente (16%)<br>             Taxa de atraso: 14.8%<br>             Atraso médio: 4.8 min</div>`)[0];
+                popup_60de8bcf47aa57932c4cc60ffe360cd9.setContent(html_5e79fcd38f198048b5d1a94c8b750689);
+            
+        
+
+        circle_marker_508b124a15421d73e77d46e3dd1fa338.bindPopup(popup_60de8bcf47aa57932c4cc60ffe360cd9)
+        ;
+
+        
+    
+    
+            var circle_marker_fd291b2e2fc0814838dbaa51f334b8b9 = L.circleMarker(
+                [43.60732, -110.73774],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_43a337c86a2992d0f6744ecdf12ddef6 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ef526d403e30347a2cbaf37095c1a8da = $(`<div id="html_ef526d403e30347a2cbaf37095c1a8da" style="width: 100.0%; height: 100.0%;"><b>JAC — Jackson Hole Airport</b><br>             Cidade: Jackson, WY<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 25.3%<br>             Atraso médio: 8.8 min</div>`)[0];
+                popup_43a337c86a2992d0f6744ecdf12ddef6.setContent(html_ef526d403e30347a2cbaf37095c1a8da);
+            
+        
+
+        circle_marker_fd291b2e2fc0814838dbaa51f334b8b9.bindPopup(popup_43a337c86a2992d0f6744ecdf12ddef6)
+        ;
+
+        
+    
+    
+            var circle_marker_36ac93b4db6c023e60a71eb43386a5d0 = L.circleMarker(
+                [32.31117, -90.07589],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_e0c72b0f41fd9f5f95b8db2a60623be5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4bf7e42246e24dfb1d07e66e034253f7 = $(`<div id="html_4bf7e42246e24dfb1d07e66e034253f7" style="width: 100.0%; height: 100.0%;"><b>JAN — Jackson-Evers International Airport</b><br>             Cidade: Jackson, MS<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 24.4%<br>             Atraso médio: 9.7 min</div>`)[0];
+                popup_e0c72b0f41fd9f5f95b8db2a60623be5.setContent(html_4bf7e42246e24dfb1d07e66e034253f7);
+            
+        
+
+        circle_marker_36ac93b4db6c023e60a71eb43386a5d0.bindPopup(popup_e0c72b0f41fd9f5f95b8db2a60623be5)
+        ;
+
+        
+    
+    
+            var circle_marker_6263938fa557b3eba8bcfe438aa149d1 = L.circleMarker(
+                [30.49406, -81.68786],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_995be98f1ba45495716fe311d59ba010 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_260a8612204c19f89fd8fa6ebd37cf98 = $(`<div id="html_260a8612204c19f89fd8fa6ebd37cf98" style="width: 100.0%; height: 100.0%;"><b>JAX — Jacksonville International Airport</b><br>             Cidade: Jacksonville, FL<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 20.3%<br>             Atraso médio: 7.3 min</div>`)[0];
+                popup_995be98f1ba45495716fe311d59ba010.setContent(html_260a8612204c19f89fd8fa6ebd37cf98);
+            
+        
+
+        circle_marker_6263938fa557b3eba8bcfe438aa149d1.bindPopup(popup_995be98f1ba45495716fe311d59ba010)
+        ;
+
+        
+    
+    
+            var circle_marker_dfcb90b60fcdcf85a36ab659e218c0c4 = L.circleMarker(
+                [40.63975, -73.77893],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_f4785840b022570dd91329f7c26512cc = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_36e18d79d4d0cf2abb1f6c59c61571a8 = $(`<div id="html_36e18d79d4d0cf2abb1f6c59c61571a8" style="width: 100.0%; height: 100.0%;"><b>JFK — John F. Kennedy International Airport (New York International Airport)</b><br>             Cidade: New York, NY<br>             Cluster: Crítico (33%)<br>             Taxa de atraso: 31.4%<br>             Atraso médio: 14.4 min</div>`)[0];
+                popup_f4785840b022570dd91329f7c26512cc.setContent(html_36e18d79d4d0cf2abb1f6c59c61571a8);
+            
+        
+
+        circle_marker_dfcb90b60fcdcf85a36ab659e218c0c4.bindPopup(popup_f4785840b022570dd91329f7c26512cc)
+        ;
+
+        
+    
+    
+            var circle_marker_6d8358bd7c3bb813fb5e25154dea8465 = L.circleMarker(
+                [58.35496, -134.57628],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_6e414adddb56a83a26f40fdb453011c1 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_845c0a2fae8e342d8a075a6e7c8c409f = $(`<div id="html_845c0a2fae8e342d8a075a6e7c8c409f" style="width: 100.0%; height: 100.0%;"><b>JNU — Juneau International Airport</b><br>             Cidade: Juneau, AK<br>             Cluster: Excelente (16%)<br>             Taxa de atraso: 16.7%<br>             Atraso médio: 4.8 min</div>`)[0];
+                popup_6e414adddb56a83a26f40fdb453011c1.setContent(html_845c0a2fae8e342d8a075a6e7c8c409f);
+            
+        
+
+        circle_marker_6d8358bd7c3bb813fb5e25154dea8465.bindPopup(popup_6e414adddb56a83a26f40fdb453011c1)
+        ;
+
+        
+    
+    
+            var circle_marker_11dd5209faa5192d1b7b19859923eaaf = L.circleMarker(
+                [19.73877, -156.04563],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_a4f36225651e5f8e83ccab7dc6c69757 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_625aaca67c73bf5d434675b28f5e4c48 = $(`<div id="html_625aaca67c73bf5d434675b28f5e4c48" style="width: 100.0%; height: 100.0%;"><b>KOA — Kona International Airport at Keahole</b><br>             Cidade: Kailua/Kona, HI<br>             Cluster: Excelente (16%)<br>             Taxa de atraso: 16.0%<br>             Atraso médio: 2.7 min</div>`)[0];
+                popup_a4f36225651e5f8e83ccab7dc6c69757.setContent(html_625aaca67c73bf5d434675b28f5e4c48);
+            
+        
+
+        circle_marker_11dd5209faa5192d1b7b19859923eaaf.bindPopup(popup_a4f36225651e5f8e83ccab7dc6c69757)
+        ;
+
+        
+    
+    
+            var circle_marker_13cfa8a99635dc939d578a26b23f4fe4 = L.circleMarker(
+                [36.08036, -115.15233],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_91452d5b501114193a811c241b4dc696 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ff2192e76716b2a171604ec9f70d8c52 = $(`<div id="html_ff2192e76716b2a171604ec9f70d8c52" style="width: 100.0%; height: 100.0%;"><b>LAS — McCarran International Airport</b><br>             Cidade: Las Vegas, NV<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 20.6%<br>             Atraso médio: 6.5 min</div>`)[0];
+                popup_91452d5b501114193a811c241b4dc696.setContent(html_ff2192e76716b2a171604ec9f70d8c52);
+            
+        
+
+        circle_marker_13cfa8a99635dc939d578a26b23f4fe4.bindPopup(popup_91452d5b501114193a811c241b4dc696)
+        ;
+
+        
+    
+    
+            var circle_marker_23e51087a141c5aa619e446f5ab82654 = L.circleMarker(
+                [33.94254, -118.40807],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_ac1a378091af6393b2dec43b804a0ed7 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1c904dfc704b84e4e7b3a4bcd900dcdf = $(`<div id="html_1c904dfc704b84e4e7b3a4bcd900dcdf" style="width: 100.0%; height: 100.0%;"><b>LAX — Los Angeles International Airport</b><br>             Cidade: Los Angeles, CA<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 21.0%<br>             Atraso médio: 6.2 min</div>`)[0];
+                popup_ac1a378091af6393b2dec43b804a0ed7.setContent(html_1c904dfc704b84e4e7b3a4bcd900dcdf);
+            
+        
+
+        circle_marker_23e51087a141c5aa619e446f5ab82654.bindPopup(popup_ac1a378091af6393b2dec43b804a0ed7)
+        ;
+
+        
+    
+    
+            var circle_marker_f89a7b4ef96c5db07abcb5f7964a3e77 = L.circleMarker(
+                [33.66364, -101.82278],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_67a4ec16df3c2a22e6b94193a4371de0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f6655b381380dfcc8f5d4c7b27ed837a = $(`<div id="html_f6655b381380dfcc8f5d4c7b27ed837a" style="width: 100.0%; height: 100.0%;"><b>LBB — Lubbock Preston Smith International Airport</b><br>             Cidade: Lubbock, TX<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 23.0%<br>             Atraso médio: 9.9 min</div>`)[0];
+                popup_67a4ec16df3c2a22e6b94193a4371de0.setContent(html_f6655b381380dfcc8f5d4c7b27ed837a);
+            
+        
+
+        circle_marker_f89a7b4ef96c5db07abcb5f7964a3e77.bindPopup(popup_67a4ec16df3c2a22e6b94193a4371de0)
+        ;
+
+        
+    
+    
+            var circle_marker_16c9ba6a02796153e8cdf0abd0910e60 = L.circleMarker(
+                [38.03697, -84.60539],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_5b001371ba180584405c51bc990cdbd7 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f6fe49428ab46e384ec84f76ab623bbd = $(`<div id="html_f6fe49428ab46e384ec84f76ab623bbd" style="width: 100.0%; height: 100.0%;"><b>LEX — Blue Grass Airport</b><br>             Cidade: Lexington, KY<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 25.9%<br>             Atraso médio: 10.4 min</div>`)[0];
+                popup_5b001371ba180584405c51bc990cdbd7.setContent(html_f6fe49428ab46e384ec84f76ab623bbd);
+            
+        
+
+        circle_marker_16c9ba6a02796153e8cdf0abd0910e60.bindPopup(popup_5b001371ba180584405c51bc990cdbd7)
+        ;
+
+        
+    
+    
+            var circle_marker_c1c5ab350a6ec37dd353ddc9e7af83d7 = L.circleMarker(
+                [30.20528, -91.98766],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_a779961a787b93f1f40d7446f7d9e177 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7cd7ae8be4786b21f3c3fb8eb1e86903 = $(`<div id="html_7cd7ae8be4786b21f3c3fb8eb1e86903" style="width: 100.0%; height: 100.0%;"><b>LFT — Lafayette Regional Airport</b><br>             Cidade: Lafayette, LA<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 22.9%<br>             Atraso médio: 11.6 min</div>`)[0];
+                popup_a779961a787b93f1f40d7446f7d9e177.setContent(html_7cd7ae8be4786b21f3c3fb8eb1e86903);
+            
+        
+
+        circle_marker_c1c5ab350a6ec37dd353ddc9e7af83d7.bindPopup(popup_a779961a787b93f1f40d7446f7d9e177)
+        ;
+
+        
+    
+    
+            var circle_marker_00fe9225ec1b1d7f418d1824b3d35476 = L.circleMarker(
+                [40.77724, -73.87261],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_905fc9ab04c722863f7e327dbf1e7f5e = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_5151d2de67cd9fa66a9f0f6573304843 = $(`<div id="html_5151d2de67cd9fa66a9f0f6573304843" style="width: 100.0%; height: 100.0%;"><b>LGA — LaGuardia Airport (Marine Air Terminal)</b><br>             Cidade: New York, NY<br>             Cluster: Crítico (33%)<br>             Taxa de atraso: 34.2%<br>             Atraso médio: 15.4 min</div>`)[0];
+                popup_905fc9ab04c722863f7e327dbf1e7f5e.setContent(html_5151d2de67cd9fa66a9f0f6573304843);
+            
+        
+
+        circle_marker_00fe9225ec1b1d7f418d1824b3d35476.bindPopup(popup_905fc9ab04c722863f7e327dbf1e7f5e)
+        ;
+
+        
+    
+    
+            var circle_marker_18f96c88a9d908b8db6724952cf1b2fe = L.circleMarker(
+                [33.81772, -118.15161],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_e2ac1c9c85d903ef30f095306d7579a9 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8755145150cbfdf50509c5c053ae7949 = $(`<div id="html_8755145150cbfdf50509c5c053ae7949" style="width: 100.0%; height: 100.0%;"><b>LGB — Long Beach Airport (Daugherty Field)</b><br>             Cidade: Long Beach, CA<br>             Cluster: Excelente (16%)<br>             Taxa de atraso: 17.1%<br>             Atraso médio: 4.0 min</div>`)[0];
+                popup_e2ac1c9c85d903ef30f095306d7579a9.setContent(html_8755145150cbfdf50509c5c053ae7949);
+            
+        
+
+        circle_marker_18f96c88a9d908b8db6724952cf1b2fe.bindPopup(popup_e2ac1c9c85d903ef30f095306d7579a9)
+        ;
+
+        
+    
+    
+            var circle_marker_86f70c1982183fb5de34f80dce9448fe = L.circleMarker(
+                [21.97598, -159.33896],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_249ccc92d26ca621c8fe1961b2b7c65c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_426793da22d83763cf0edba36602922e = $(`<div id="html_426793da22d83763cf0edba36602922e" style="width: 100.0%; height: 100.0%;"><b>LIH — Lihue Airport</b><br>             Cidade: Lihue, HI<br>             Cluster: Excelente (16%)<br>             Taxa de atraso: 12.3%<br>             Atraso médio: 0.1 min</div>`)[0];
+                popup_249ccc92d26ca621c8fe1961b2b7c65c.setContent(html_426793da22d83763cf0edba36602922e);
+            
+        
+
+        circle_marker_86f70c1982183fb5de34f80dce9448fe.bindPopup(popup_249ccc92d26ca621c8fe1961b2b7c65c)
+        ;
+
+        
+    
+    
+            var circle_marker_2ebf89f7d0f3e4c35a308f9fffc4dba3 = L.circleMarker(
+                [34.7294, -92.22425],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_55f2a940e11b6697143e4c9c594d47c7 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1cbd18a76e470243ed0ef8aac10eafcc = $(`<div id="html_1cbd18a76e470243ed0ef8aac10eafcc" style="width: 100.0%; height: 100.0%;"><b>LIT — Bill and Hillary Clinton National Airport (Adams Field)</b><br>             Cidade: Little Rock, AR<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 24.7%<br>             Atraso médio: 10.4 min</div>`)[0];
+                popup_55f2a940e11b6697143e4c9c594d47c7.setContent(html_1cbd18a76e470243ed0ef8aac10eafcc);
+            
+        
+
+        circle_marker_2ebf89f7d0f3e4c35a308f9fffc4dba3.bindPopup(popup_55f2a940e11b6697143e4c9c594d47c7)
+        ;
+
+        
+    
+    
+            var circle_marker_64773120af2d9f6f87c71a4cbaea8b68 = L.circleMarker(
+                [31.94253, -102.20191],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_1bdf82fe065dc1e53c8bc7b9cc48a6e6 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d768ba3c0d7c3b13f7e42730f8296f09 = $(`<div id="html_d768ba3c0d7c3b13f7e42730f8296f09" style="width: 100.0%; height: 100.0%;"><b>MAF — Midland International Airport</b><br>             Cidade: Midland, TX<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 21.5%<br>             Atraso médio: 9.1 min</div>`)[0];
+                popup_1bdf82fe065dc1e53c8bc7b9cc48a6e6.setContent(html_d768ba3c0d7c3b13f7e42730f8296f09);
+            
+        
+
+        circle_marker_64773120af2d9f6f87c71a4cbaea8b68.bindPopup(popup_1bdf82fe065dc1e53c8bc7b9cc48a6e6)
+        ;
+
+        
+    
+    
+            var circle_marker_f0395f45eaf226d3906cd88fa8afc7e2 = L.circleMarker(
+                [39.29761, -94.71391],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_3b88cb42427770ff81a5d5fc7bc4db94 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_fbbe51d58a68f402eb794a2f6cb52806 = $(`<div id="html_fbbe51d58a68f402eb794a2f6cb52806" style="width: 100.0%; height: 100.0%;"><b>MCI — Kansas City International Airport</b><br>             Cidade: Kansas City, MO<br>             Cluster: Excelente (16%)<br>             Taxa de atraso: 17.8%<br>             Atraso médio: 3.1 min</div>`)[0];
+                popup_3b88cb42427770ff81a5d5fc7bc4db94.setContent(html_fbbe51d58a68f402eb794a2f6cb52806);
+            
+        
+
+        circle_marker_f0395f45eaf226d3906cd88fa8afc7e2.bindPopup(popup_3b88cb42427770ff81a5d5fc7bc4db94)
+        ;
+
+        
+    
+    
+            var circle_marker_09ba3f84e64621a00b5521bd6aa8319d = L.circleMarker(
+                [28.42889, -81.31603],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_289ac12071d119834f68cd324b51a644 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_585655b50889cf783d61b110a7df80e4 = $(`<div id="html_585655b50889cf783d61b110a7df80e4" style="width: 100.0%; height: 100.0%;"><b>MCO — Orlando International Airport</b><br>             Cidade: Orlando, FL<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 21.3%<br>             Atraso médio: 7.9 min</div>`)[0];
+                popup_289ac12071d119834f68cd324b51a644.setContent(html_585655b50889cf783d61b110a7df80e4);
+            
+        
+
+        circle_marker_09ba3f84e64621a00b5521bd6aa8319d.bindPopup(popup_289ac12071d119834f68cd324b51a644)
+        ;
+
+        
+    
+    
+            var circle_marker_76dfa548087c71882b15b87cbd3cae73 = L.circleMarker(
+                [40.1935, -76.7634],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_33e27293e2ae473e8242179114f1fcb1 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0eacc5d384c8cf1de6e33444b3a480fa = $(`<div id="html_0eacc5d384c8cf1de6e33444b3a480fa" style="width: 100.0%; height: 100.0%;"><b>MDT — Harrisburg International Airport</b><br>             Cidade: Harrisburg, PA<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 25.2%<br>             Atraso médio: 12.7 min</div>`)[0];
+                popup_33e27293e2ae473e8242179114f1fcb1.setContent(html_0eacc5d384c8cf1de6e33444b3a480fa);
+            
+        
+
+        circle_marker_76dfa548087c71882b15b87cbd3cae73.bindPopup(popup_33e27293e2ae473e8242179114f1fcb1)
+        ;
+
+        
+    
+    
+            var circle_marker_9ce54ac27185dd61548112dd1147ab2a = L.circleMarker(
+                [41.78598, -87.75242],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_bbf522ee072c4b97c9ef97e3e7b608b9 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e76cec732508b819ed9adc8c9991ed4e = $(`<div id="html_e76cec732508b819ed9adc8c9991ed4e" style="width: 100.0%; height: 100.0%;"><b>MDW — Chicago Midway International Airport</b><br>             Cidade: Chicago, IL<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 23.2%<br>             Atraso médio: 5.2 min</div>`)[0];
+                popup_bbf522ee072c4b97c9ef97e3e7b608b9.setContent(html_e76cec732508b819ed9adc8c9991ed4e);
+            
+        
+
+        circle_marker_9ce54ac27185dd61548112dd1147ab2a.bindPopup(popup_bbf522ee072c4b97c9ef97e3e7b608b9)
+        ;
+
+        
+    
+    
+            var circle_marker_6b85e064cbb6d807c43141eac91e25e8 = L.circleMarker(
+                [35.04242, -89.97667],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_81d96f5f1361bc671328821f83793f0a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_438cd70879884ebf842ba25c0beacfe0 = $(`<div id="html_438cd70879884ebf842ba25c0beacfe0" style="width: 100.0%; height: 100.0%;"><b>MEM — Memphis International Airport</b><br>             Cidade: Memphis, TN<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 22.0%<br>             Atraso médio: 9.0 min</div>`)[0];
+                popup_81d96f5f1361bc671328821f83793f0a.setContent(html_438cd70879884ebf842ba25c0beacfe0);
+            
+        
+
+        circle_marker_6b85e064cbb6d807c43141eac91e25e8.bindPopup(popup_81d96f5f1361bc671328821f83793f0a)
+        ;
+
+        
+    
+    
+            var circle_marker_521e52ab598460c2e4bce3d6294903ce = L.circleMarker(
+                [26.17583, -98.23861],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_2222921e10a039509a7b5b14fba01016 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ca230e20025ba6380228a11fbe74a236 = $(`<div id="html_ca230e20025ba6380228a11fbe74a236" style="width: 100.0%; height: 100.0%;"><b>MFE — McAllen-Miller International Airport (McAllen Miller International)</b><br>             Cidade: McAllen, TX<br>             Cluster: Excelente (16%)<br>             Taxa de atraso: 14.2%<br>             Atraso médio: 4.7 min</div>`)[0];
+                popup_2222921e10a039509a7b5b14fba01016.setContent(html_ca230e20025ba6380228a11fbe74a236);
+            
+        
+
+        circle_marker_521e52ab598460c2e4bce3d6294903ce.bindPopup(popup_2222921e10a039509a7b5b14fba01016)
+        ;
+
+        
+    
+    
+            var circle_marker_6d1f21aa419a33f9d2aab1f2ea5b4e50 = L.circleMarker(
+                [32.30064, -86.39398],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_31afeee44e6bae131e5e5f9a850fdd75 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_078c41e95958d59c543b65659a64dd7e = $(`<div id="html_078c41e95958d59c543b65659a64dd7e" style="width: 100.0%; height: 100.0%;"><b>MGM — Montgomery Regional Airport</b><br>             Cidade: Montgomery, AL<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 23.3%<br>             Atraso médio: 9.9 min</div>`)[0];
+                popup_31afeee44e6bae131e5e5f9a850fdd75.setContent(html_078c41e95958d59c543b65659a64dd7e);
+            
+        
+
+        circle_marker_6d1f21aa419a33f9d2aab1f2ea5b4e50.bindPopup(popup_31afeee44e6bae131e5e5f9a850fdd75)
+        ;
+
+        
+    
+    
+            var circle_marker_775b4a74ba4bf9b09e8c48eaa5cb92a6 = L.circleMarker(
+                [42.93452, -71.43706],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_e614bc305c7850e700c3fc2d28fe4728 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_3b9ad080eb29b22f7c5e660ec0dcf9c8 = $(`<div id="html_3b9ad080eb29b22f7c5e660ec0dcf9c8" style="width: 100.0%; height: 100.0%;"><b>MHT — Manchester-Boston Regional Airport</b><br>             Cidade: Manchester, NH<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 19.7%<br>             Atraso médio: 2.6 min</div>`)[0];
+                popup_e614bc305c7850e700c3fc2d28fe4728.setContent(html_3b9ad080eb29b22f7c5e660ec0dcf9c8);
+            
+        
+
+        circle_marker_775b4a74ba4bf9b09e8c48eaa5cb92a6.bindPopup(popup_e614bc305c7850e700c3fc2d28fe4728)
+        ;
+
+        
+    
+    
+            var circle_marker_69b491c87402ce9966a24281085e6373 = L.circleMarker(
+                [25.79325, -80.29056],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_fb5e6ba8c6b8e7ed7cfd18a776025519 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ebdc12c0456f4c4178d20830acdee4d4 = $(`<div id="html_ebdc12c0456f4c4178d20830acdee4d4" style="width: 100.0%; height: 100.0%;"><b>MIA — Miami International Airport</b><br>             Cidade: Miami, FL<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 23.6%<br>             Atraso médio: 7.5 min</div>`)[0];
+                popup_fb5e6ba8c6b8e7ed7cfd18a776025519.setContent(html_ebdc12c0456f4c4178d20830acdee4d4);
+            
+        
+
+        circle_marker_69b491c87402ce9966a24281085e6373.bindPopup(popup_fb5e6ba8c6b8e7ed7cfd18a776025519)
+        ;
+
+        
+    
+    
+            var circle_marker_17a2d9c8649de119cab3b3547fe21259 = L.circleMarker(
+                [42.94722, -87.89658],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_1bab96683177368b047a153751c2e5ad = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_55d9aa2e74badab296483b78166e88b2 = $(`<div id="html_55d9aa2e74badab296483b78166e88b2" style="width: 100.0%; height: 100.0%;"><b>MKE — General Mitchell International Airport</b><br>             Cidade: Milwaukee, WI<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 23.0%<br>             Atraso médio: 5.8 min</div>`)[0];
+                popup_1bab96683177368b047a153751c2e5ad.setContent(html_55d9aa2e74badab296483b78166e88b2);
+            
+        
+
+        circle_marker_17a2d9c8649de119cab3b3547fe21259.bindPopup(popup_1bab96683177368b047a153751c2e5ad)
+        ;
+
+        
+    
+    
+            var circle_marker_90e7b89d305a86d156b5af95cb730ea8 = L.circleMarker(
+                [41.44853, -90.50754],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_789ae647a64b96d62dcdc89d13de44f3 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_cde3b272b8b838ff91928422fd5fcbe3 = $(`<div id="html_cde3b272b8b838ff91928422fd5fcbe3" style="width: 100.0%; height: 100.0%;"><b>MLI — Quad City International Airport</b><br>             Cidade: Moline, IL<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 31.2%<br>             Atraso médio: 15.5 min</div>`)[0];
+                popup_789ae647a64b96d62dcdc89d13de44f3.setContent(html_cde3b272b8b838ff91928422fd5fcbe3);
+            
+        
+
+        circle_marker_90e7b89d305a86d156b5af95cb730ea8.bindPopup(popup_789ae647a64b96d62dcdc89d13de44f3)
+        ;
+
+        
+    
+    
+            var circle_marker_85837845130ae2f5e7b314f9e92888fa = L.circleMarker(
+                [30.69142, -88.24283],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_364336e222f22c63fff66abb5b615026 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7f24fffc177a844f0adefe90f313cb8e = $(`<div id="html_7f24fffc177a844f0adefe90f313cb8e" style="width: 100.0%; height: 100.0%;"><b>MOB — Mobile Regional Airport</b><br>             Cidade: Mobile, AL<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 22.3%<br>             Atraso médio: 9.3 min</div>`)[0];
+                popup_364336e222f22c63fff66abb5b615026.setContent(html_7f24fffc177a844f0adefe90f313cb8e);
+            
+        
+
+        circle_marker_85837845130ae2f5e7b314f9e92888fa.bindPopup(popup_364336e222f22c63fff66abb5b615026)
+        ;
+
+        
+    
+    
+            var circle_marker_61035394a671edff42fac3a474a349c5 = L.circleMarker(
+                [36.58698, -121.84295],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_6018ec04fba145dd0447f4e8d9f3d475 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_bed2b48828a33b1eca944ef1896c3f7d = $(`<div id="html_bed2b48828a33b1eca944ef1896c3f7d" style="width: 100.0%; height: 100.0%;"><b>MRY — Monterey Regional Airport (Monterey Peninsula Airport)</b><br>             Cidade: Monterey, CA<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 18.7%<br>             Atraso médio: 6.8 min</div>`)[0];
+                popup_6018ec04fba145dd0447f4e8d9f3d475.setContent(html_bed2b48828a33b1eca944ef1896c3f7d);
+            
+        
+
+        circle_marker_61035394a671edff42fac3a474a349c5.bindPopup(popup_6018ec04fba145dd0447f4e8d9f3d475)
+        ;
+
+        
+    
+    
+            var circle_marker_c21e616e47774a34b6071bb16e470e1a = L.circleMarker(
+                [43.13986, -89.33751],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_10eee4bd0ca3b99d4f43bbeac1ab5466 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_90d5c5499b199c1c39ce0cf90dd4f534 = $(`<div id="html_90d5c5499b199c1c39ce0cf90dd4f534" style="width: 100.0%; height: 100.0%;"><b>MSN — Dane County Regional Airport</b><br>             Cidade: Madison, WI<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 26.0%<br>             Atraso médio: 10.2 min</div>`)[0];
+                popup_10eee4bd0ca3b99d4f43bbeac1ab5466.setContent(html_90d5c5499b199c1c39ce0cf90dd4f534);
+            
+        
+
+        circle_marker_c21e616e47774a34b6071bb16e470e1a.bindPopup(popup_10eee4bd0ca3b99d4f43bbeac1ab5466)
+        ;
+
+        
+    
+    
+            var circle_marker_34218c2761d07849bdf2ab4a1ecb886c = L.circleMarker(
+                [44.88055, -93.21692],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_9e61b9d198e27c52225d67670284675a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c343da98019c0dcf5956a98ffcf8a3e4 = $(`<div id="html_c343da98019c0dcf5956a98ffcf8a3e4" style="width: 100.0%; height: 100.0%;"><b>MSP — Minneapolis-Saint Paul International Airport</b><br>             Cidade: Minneapolis, MN<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 20.1%<br>             Atraso médio: 3.1 min</div>`)[0];
+                popup_9e61b9d198e27c52225d67670284675a.setContent(html_c343da98019c0dcf5956a98ffcf8a3e4);
+            
+        
+
+        circle_marker_34218c2761d07849bdf2ab4a1ecb886c.bindPopup(popup_9e61b9d198e27c52225d67670284675a)
+        ;
+
+        
+    
+    
+            var circle_marker_37572ee48790213651819326af35b66c = L.circleMarker(
+                [29.99339, -90.25803],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_4661990990f5f79eecf3fba762f0e87f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_a881c5c4ab5380110c13d48c9c00af33 = $(`<div id="html_a881c5c4ab5380110c13d48c9c00af33" style="width: 100.0%; height: 100.0%;"><b>MSY — Louis Armstrong New Orleans International Airport</b><br>             Cidade: New Orleans, LA<br>             Cluster: Excelente (16%)<br>             Taxa de atraso: 16.5%<br>             Atraso médio: 2.7 min</div>`)[0];
+                popup_4661990990f5f79eecf3fba762f0e87f.setContent(html_a881c5c4ab5380110c13d48c9c00af33);
+            
+        
+
+        circle_marker_37572ee48790213651819326af35b66c.bindPopup(popup_4661990990f5f79eecf3fba762f0e87f)
+        ;
+
+        
+    
+    
+            var circle_marker_a502f6e6302fb33737821d8f5456a798 = L.circleMarker(
+                [33.67975, -78.92833],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_0dad1cb27382830e5a12516978cd8eb3 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9d5fa77055e63a490347e81e6dc80258 = $(`<div id="html_9d5fa77055e63a490347e81e6dc80258" style="width: 100.0%; height: 100.0%;"><b>MYR — Myrtle Beach International Airport</b><br>             Cidade: Myrtle Beach, SC<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 29.0%<br>             Atraso médio: 11.7 min</div>`)[0];
+                popup_0dad1cb27382830e5a12516978cd8eb3.setContent(html_9d5fa77055e63a490347e81e6dc80258);
+            
+        
+
+        circle_marker_a502f6e6302fb33737821d8f5456a798.bindPopup(popup_0dad1cb27382830e5a12516978cd8eb3)
+        ;
+
+        
+    
+    
+            var circle_marker_0f359e78d4e865e9cd148a640d943451 = L.circleMarker(
+                [37.72129, -122.22072],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_98e5a1ba26618835d7009837bf3134c4 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6e749ef8fe728ce0a4dfa4c156bd9b6b = $(`<div id="html_6e749ef8fe728ce0a4dfa4c156bd9b6b" style="width: 100.0%; height: 100.0%;"><b>OAK — Oakland International Airport</b><br>             Cidade: Oakland, CA<br>             Cluster: Excelente (16%)<br>             Taxa de atraso: 18.4%<br>             Atraso médio: 5.7 min</div>`)[0];
+                popup_98e5a1ba26618835d7009837bf3134c4.setContent(html_6e749ef8fe728ce0a4dfa4c156bd9b6b);
+            
+        
+
+        circle_marker_0f359e78d4e865e9cd148a640d943451.bindPopup(popup_98e5a1ba26618835d7009837bf3134c4)
+        ;
+
+        
+    
+    
+            var circle_marker_5f210d6bab4bd4fbb0560d0790a80c80 = L.circleMarker(
+                [20.89865, -156.43046],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_71f326fead359984283b556e0ff330b0 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_91a1a42b0b26122d1e7fd4f5222e698f = $(`<div id="html_91a1a42b0b26122d1e7fd4f5222e698f" style="width: 100.0%; height: 100.0%;"><b>OGG — Kahului Airport</b><br>             Cidade: Kahului, HI<br>             Cluster: Excelente (16%)<br>             Taxa de atraso: 16.5%<br>             Atraso médio: 2.4 min</div>`)[0];
+                popup_71f326fead359984283b556e0ff330b0.setContent(html_91a1a42b0b26122d1e7fd4f5222e698f);
+            
+        
+
+        circle_marker_5f210d6bab4bd4fbb0560d0790a80c80.bindPopup(popup_71f326fead359984283b556e0ff330b0)
+        ;
+
+        
+    
+    
+            var circle_marker_86a5d19df50cdf6a682a4585356c0f9e = L.circleMarker(
+                [35.39309, -97.60073],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_d771f8d0dbbb9e98882bc5a5a5dbd2bd = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0b907594d9aa91bebfc4a7bb7354f41d = $(`<div id="html_0b907594d9aa91bebfc4a7bb7354f41d" style="width: 100.0%; height: 100.0%;"><b>OKC — Will Rogers World Airport</b><br>             Cidade: Oklahoma City, OK<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 19.5%<br>             Atraso médio: 5.8 min</div>`)[0];
+                popup_d771f8d0dbbb9e98882bc5a5a5dbd2bd.setContent(html_0b907594d9aa91bebfc4a7bb7354f41d);
+            
+        
+
+        circle_marker_86a5d19df50cdf6a682a4585356c0f9e.bindPopup(popup_d771f8d0dbbb9e98882bc5a5a5dbd2bd)
+        ;
+
+        
+    
+    
+            var circle_marker_16ad0cf8adce438c1b320f9a9d501ac9 = L.circleMarker(
+                [41.30252, -95.89417],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_7e672f2eaec6cf9c5afad122cdc87a42 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_647beb9c7ac8a91914272f5f52dedbf5 = $(`<div id="html_647beb9c7ac8a91914272f5f52dedbf5" style="width: 100.0%; height: 100.0%;"><b>OMA — Eppley Airfield</b><br>             Cidade: Omaha, NE<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 20.4%<br>             Atraso médio: 7.5 min</div>`)[0];
+                popup_7e672f2eaec6cf9c5afad122cdc87a42.setContent(html_647beb9c7ac8a91914272f5f52dedbf5);
+            
+        
+
+        circle_marker_16ad0cf8adce438c1b320f9a9d501ac9.bindPopup(popup_7e672f2eaec6cf9c5afad122cdc87a42)
+        ;
+
+        
+    
+    
+            var circle_marker_0b46001c5625b8ec54b33fa961ba21d8 = L.circleMarker(
+                [34.056, -117.60119],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_aeba46fa42fb160fd86e77d26534da9d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1f58a095a52bbfeecbca7c1d54b03eac = $(`<div id="html_1f58a095a52bbfeecbca7c1d54b03eac" style="width: 100.0%; height: 100.0%;"><b>ONT — Ontario International Airport</b><br>             Cidade: Ontario, CA<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 17.9%<br>             Atraso médio: 5.9 min</div>`)[0];
+                popup_aeba46fa42fb160fd86e77d26534da9d.setContent(html_1f58a095a52bbfeecbca7c1d54b03eac);
+            
+        
+
+        circle_marker_0b46001c5625b8ec54b33fa961ba21d8.bindPopup(popup_aeba46fa42fb160fd86e77d26534da9d)
+        ;
+
+        
+    
+    
+            var circle_marker_491916f99f553b1bee5e9c2f2ebf2403 = L.circleMarker(
+                [41.9796, -87.90446],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_8ca49d6009a4de0b7fe8d9291df676f1 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_bf1c7db1c56796ed3e0de9699e5f5df6 = $(`<div id="html_bf1c7db1c56796ed3e0de9699e5f5df6" style="width: 100.0%; height: 100.0%;"><b>ORD — Chicago O'Hare International Airport</b><br>             Cidade: Chicago, IL<br>             Cluster: Crítico (33%)<br>             Taxa de atraso: 35.6%<br>             Atraso médio: 18.6 min</div>`)[0];
+                popup_8ca49d6009a4de0b7fe8d9291df676f1.setContent(html_bf1c7db1c56796ed3e0de9699e5f5df6);
+            
+        
+
+        circle_marker_491916f99f553b1bee5e9c2f2ebf2403.bindPopup(popup_8ca49d6009a4de0b7fe8d9291df676f1)
+        ;
+
+        
+    
+    
+            var circle_marker_f6115faed17cfed34e34e537fc75f4c4 = L.circleMarker(
+                [36.89461, -76.20122],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_85f33a3c2ddc56e838084e9e27956bf6 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f7498bf77d45f80b13e069280bf66456 = $(`<div id="html_f7498bf77d45f80b13e069280bf66456" style="width: 100.0%; height: 100.0%;"><b>ORF — Norfolk International Airport</b><br>             Cidade: Norfolk, VA<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 22.0%<br>             Atraso médio: 11.1 min</div>`)[0];
+                popup_85f33a3c2ddc56e838084e9e27956bf6.setContent(html_f7498bf77d45f80b13e069280bf66456);
+            
+        
+
+        circle_marker_f6115faed17cfed34e34e537fc75f4c4.bindPopup(popup_85f33a3c2ddc56e838084e9e27956bf6)
+        ;
+
+        
+    
+    
+            var circle_marker_a80befe40c2f798527d33939ce4d7757 = L.circleMarker(
+                [26.68316, -80.09559],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_0f05355cd3357ec267d0adf8f77c310c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_93c77745a64b80c265fa99561701cd64 = $(`<div id="html_93c77745a64b80c265fa99561701cd64" style="width: 100.0%; height: 100.0%;"><b>PBI — Palm Beach International Airport</b><br>             Cidade: West Palm Beach, FL<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 27.0%<br>             Atraso médio: 11.9 min</div>`)[0];
+                popup_0f05355cd3357ec267d0adf8f77c310c.setContent(html_93c77745a64b80c265fa99561701cd64);
+            
+        
+
+        circle_marker_a80befe40c2f798527d33939ce4d7757.bindPopup(popup_0f05355cd3357ec267d0adf8f77c310c)
+        ;
+
+        
+    
+    
+            var circle_marker_d780f33d18dccba3fa4ebb1d232418b7 = L.circleMarker(
+                [45.58872, -122.5975],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_a3e8e53ce8ae3e6d4a21eca1544e7b1d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_6938aff55e8f0143cf15cb39c0e02bfa = $(`<div id="html_6938aff55e8f0143cf15cb39c0e02bfa" style="width: 100.0%; height: 100.0%;"><b>PDX — Portland International Airport</b><br>             Cidade: Portland, OR<br>             Cluster: Excelente (16%)<br>             Taxa de atraso: 13.3%<br>             Atraso médio: 0.3 min</div>`)[0];
+                popup_a3e8e53ce8ae3e6d4a21eca1544e7b1d.setContent(html_6938aff55e8f0143cf15cb39c0e02bfa);
+            
+        
+
+        circle_marker_d780f33d18dccba3fa4ebb1d232418b7.bindPopup(popup_a3e8e53ce8ae3e6d4a21eca1544e7b1d)
+        ;
+
+        
+    
+    
+            var circle_marker_9018ff709365139583f655353010c25c = L.circleMarker(
+                [39.87195, -75.24114],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_9329045f4597c0700206fdb5731ed02a = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_34593a31d7a58c330267203a96b968fe = $(`<div id="html_34593a31d7a58c330267203a96b968fe" style="width: 100.0%; height: 100.0%;"><b>PHL — Philadelphia International Airport</b><br>             Cidade: Philadelphia, PA<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 28.3%<br>             Atraso médio: 9.2 min</div>`)[0];
+                popup_9329045f4597c0700206fdb5731ed02a.setContent(html_34593a31d7a58c330267203a96b968fe);
+            
+        
+
+        circle_marker_9018ff709365139583f655353010c25c.bindPopup(popup_9329045f4597c0700206fdb5731ed02a)
+        ;
+
+        
+    
+    
+            var circle_marker_47583d62bb579c4f3e524fced34672e2 = L.circleMarker(
+                [33.43417, -112.00806],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_b674c46b50edee803c4589fd151f1727 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_06af5f39f72ad04b88a672faa127756d = $(`<div id="html_06af5f39f72ad04b88a672faa127756d" style="width: 100.0%; height: 100.0%;"><b>PHX — Phoenix Sky Harbor International Airport</b><br>             Cidade: Phoenix, AZ<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 21.1%<br>             Atraso médio: 6.1 min</div>`)[0];
+                popup_b674c46b50edee803c4589fd151f1727.setContent(html_06af5f39f72ad04b88a672faa127756d);
+            
+        
+
+        circle_marker_47583d62bb579c4f3e524fced34672e2.bindPopup(popup_b674c46b50edee803c4589fd151f1727)
+        ;
+
+        
+    
+    
+            var circle_marker_d2426635c8dda6e8cd6aa1f395ba3abf = L.circleMarker(
+                [40.66424, -89.69331],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_6005ece5428b824d80b0f33e147c6a91 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ade09e32eeeead03506761de522061d3 = $(`<div id="html_ade09e32eeeead03506761de522061d3" style="width: 100.0%; height: 100.0%;"><b>PIA — General Wayne A. Downing Peoria International Airport</b><br>             Cidade: Peoria, IL<br>             Cluster: Crítico (33%)<br>             Taxa de atraso: 34.0%<br>             Atraso médio: 17.1 min</div>`)[0];
+                popup_6005ece5428b824d80b0f33e147c6a91.setContent(html_ade09e32eeeead03506761de522061d3);
+            
+        
+
+        circle_marker_d2426635c8dda6e8cd6aa1f395ba3abf.bindPopup(popup_6005ece5428b824d80b0f33e147c6a91)
+        ;
+
+        
+    
+    
+            var circle_marker_9701878454d33efdfaf2cf986f716734 = L.circleMarker(
+                [40.49147, -80.23287],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_42d58b64a7f06ac3b41c96432e4d35b7 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_75bcd166bb62b0bc20f62a2a904d9e34 = $(`<div id="html_75bcd166bb62b0bc20f62a2a904d9e34" style="width: 100.0%; height: 100.0%;"><b>PIT — Pittsburgh International Airport</b><br>             Cidade: Pittsburgh, PA<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 21.2%<br>             Atraso médio: 3.3 min</div>`)[0];
+                popup_42d58b64a7f06ac3b41c96432e4d35b7.setContent(html_75bcd166bb62b0bc20f62a2a904d9e34);
+            
+        
+
+        circle_marker_9701878454d33efdfaf2cf986f716734.bindPopup(popup_42d58b64a7f06ac3b41c96432e4d35b7)
+        ;
+
+        
+    
+    
+            var circle_marker_1340a3583a3c1244df149e1c93430303 = L.circleMarker(
+                [30.47331, -87.18744],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_585eb699fd6d44bb4c2ee09f757cac7f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1b761d6c7968285582d067384d7c4610 = $(`<div id="html_1b761d6c7968285582d067384d7c4610" style="width: 100.0%; height: 100.0%;"><b>PNS — Pensacola International Airport (Pensacola Gulf Coast Regional Airport)</b><br>             Cidade: Pensacola, FL<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 19.2%<br>             Atraso médio: 5.6 min</div>`)[0];
+                popup_585eb699fd6d44bb4c2ee09f757cac7f.setContent(html_1b761d6c7968285582d067384d7c4610);
+            
+        
+
+        circle_marker_1340a3583a3c1244df149e1c93430303.bindPopup(popup_585eb699fd6d44bb4c2ee09f757cac7f)
+        ;
+
+        
+    
+    
+            var circle_marker_570c73da5610da399c5a61896ea43094 = L.circleMarker(
+                [33.82922, -116.50625],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_fc4fb4f8acf38f5a8a8d60b1d7570ca1 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d69bafef8862f3873dd3bbfe6073d359 = $(`<div id="html_d69bafef8862f3873dd3bbfe6073d359" style="width: 100.0%; height: 100.0%;"><b>PSP — Palm Springs International Airport</b><br>             Cidade: Palm Springs, CA<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 21.7%<br>             Atraso médio: 8.9 min</div>`)[0];
+                popup_fc4fb4f8acf38f5a8a8d60b1d7570ca1.setContent(html_d69bafef8862f3873dd3bbfe6073d359);
+            
+        
+
+        circle_marker_570c73da5610da399c5a61896ea43094.bindPopup(popup_fc4fb4f8acf38f5a8a8d60b1d7570ca1)
+        ;
+
+        
+    
+    
+            var circle_marker_c7e6258b472672be63faaa1256634d03 = L.circleMarker(
+                [41.724, -71.42822],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_680aa59e3f8dd3f612665d59e99268d2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_9e6429c9592105911b92c07ec2ccc65c = $(`<div id="html_9e6429c9592105911b92c07ec2ccc65c" style="width: 100.0%; height: 100.0%;"><b>PVD — Theodore Francis Green State Airport</b><br>             Cidade: Providence, RI<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 22.6%<br>             Atraso médio: 4.7 min</div>`)[0];
+                popup_680aa59e3f8dd3f612665d59e99268d2.setContent(html_9e6429c9592105911b92c07ec2ccc65c);
+            
+        
+
+        circle_marker_c7e6258b472672be63faaa1256634d03.bindPopup(popup_680aa59e3f8dd3f612665d59e99268d2)
+        ;
+
+        
+    
+    
+            var circle_marker_27e5cfc7df4fa34c5ae4addffb9f2f53 = L.circleMarker(
+                [35.87764, -78.78747],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_6819f9a6c56e88cff48b082cd52d0fa5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8b9dfd1ae27bda1d96d2471bc18ff57a = $(`<div id="html_8b9dfd1ae27bda1d96d2471bc18ff57a" style="width: 100.0%; height: 100.0%;"><b>RDU — Raleigh-Durham International Airport</b><br>             Cidade: Raleigh, NC<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 21.7%<br>             Atraso médio: 7.7 min</div>`)[0];
+                popup_6819f9a6c56e88cff48b082cd52d0fa5.setContent(html_8b9dfd1ae27bda1d96d2471bc18ff57a);
+            
+        
+
+        circle_marker_27e5cfc7df4fa34c5ae4addffb9f2f53.bindPopup(popup_6819f9a6c56e88cff48b082cd52d0fa5)
+        ;
+
+        
+    
+    
+            var circle_marker_a1659269f4c76e2deb2eda508dd4016c = L.circleMarker(
+                [37.50517, -77.31967],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_5c0ec6176ebf5081672806b51ffb58db = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0cad284e24ffc553efcc4840d52dd235 = $(`<div id="html_0cad284e24ffc553efcc4840d52dd235" style="width: 100.0%; height: 100.0%;"><b>RIC — Richmond International Airport</b><br>             Cidade: Richmond, VA<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 26.0%<br>             Atraso médio: 11.4 min</div>`)[0];
+                popup_5c0ec6176ebf5081672806b51ffb58db.setContent(html_0cad284e24ffc553efcc4840d52dd235);
+            
+        
+
+        circle_marker_a1659269f4c76e2deb2eda508dd4016c.bindPopup(popup_5c0ec6176ebf5081672806b51ffb58db)
+        ;
+
+        
+    
+    
+            var circle_marker_9b84b6c3662a7cf97e39f7c7469eb95c = L.circleMarker(
+                [39.49858, -119.76806],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_c1c5e62d9b9aa78c315db4b5d2680b76 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f38a71e4e5edc50b31f93fe953ddd446 = $(`<div id="html_f38a71e4e5edc50b31f93fe953ddd446" style="width: 100.0%; height: 100.0%;"><b>RNO — Reno/Tahoe International Airport</b><br>             Cidade: Reno, NV<br>             Cluster: Excelente (16%)<br>             Taxa de atraso: 16.5%<br>             Atraso médio: 4.7 min</div>`)[0];
+                popup_c1c5e62d9b9aa78c315db4b5d2680b76.setContent(html_f38a71e4e5edc50b31f93fe953ddd446);
+            
+        
+
+        circle_marker_9b84b6c3662a7cf97e39f7c7469eb95c.bindPopup(popup_c1c5e62d9b9aa78c315db4b5d2680b76)
+        ;
+
+        
+    
+    
+            var circle_marker_5b799f7c093d22d7390301f8ebc3aa3c = L.circleMarker(
+                [43.11887, -77.67238],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_e176df08fc87107b80f37e234a0ea634 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_d499a3fee254db1daba9e53cab09408e = $(`<div id="html_d499a3fee254db1daba9e53cab09408e" style="width: 100.0%; height: 100.0%;"><b>ROC — Greater Rochester International Airport</b><br>             Cidade: Rochester, NY<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 23.5%<br>             Atraso médio: 9.6 min</div>`)[0];
+                popup_e176df08fc87107b80f37e234a0ea634.setContent(html_d499a3fee254db1daba9e53cab09408e);
+            
+        
+
+        circle_marker_5b799f7c093d22d7390301f8ebc3aa3c.bindPopup(popup_e176df08fc87107b80f37e234a0ea634)
+        ;
+
+        
+    
+    
+            var circle_marker_10dfd50980f30358636f17ba531248f5 = L.circleMarker(
+                [26.53617, -81.75517],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_71063f151952d76a5fb696ec69e0da48 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_530b4e17a6353c6fbe6d27031ed7438d = $(`<div id="html_530b4e17a6353c6fbe6d27031ed7438d" style="width: 100.0%; height: 100.0%;"><b>RSW — Southwest Florida International Airport</b><br>             Cidade: Ft. Myers, FL<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 23.1%<br>             Atraso médio: 9.0 min</div>`)[0];
+                popup_71063f151952d76a5fb696ec69e0da48.setContent(html_530b4e17a6353c6fbe6d27031ed7438d);
+            
+        
+
+        circle_marker_10dfd50980f30358636f17ba531248f5.bindPopup(popup_71063f151952d76a5fb696ec69e0da48)
+        ;
+
+        
+    
+    
+            var circle_marker_a8c5117ec70e17466d252bd3b31960bb = L.circleMarker(
+                [32.73356, -117.18966],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_9843332f3541a9332a93c35c235418b2 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_1804ba472ead01ce08d5bea9958ddf69 = $(`<div id="html_1804ba472ead01ce08d5bea9958ddf69" style="width: 100.0%; height: 100.0%;"><b>SAN — San Diego International Airport (Lindbergh Field)</b><br>             Cidade: San Diego, CA<br>             Cluster: Excelente (16%)<br>             Taxa de atraso: 18.4%<br>             Atraso médio: 3.8 min</div>`)[0];
+                popup_9843332f3541a9332a93c35c235418b2.setContent(html_1804ba472ead01ce08d5bea9958ddf69);
+            
+        
+
+        circle_marker_a8c5117ec70e17466d252bd3b31960bb.bindPopup(popup_9843332f3541a9332a93c35c235418b2)
+        ;
+
+        
+    
+    
+            var circle_marker_d431253b092dfd29e6a57d1974ed27fe = L.circleMarker(
+                [29.53369, -98.46978],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_0fefa89fc2ed6e22d58ddcf87a229fed = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_13c1c43ffb497fe2556434e65c7ff266 = $(`<div id="html_13c1c43ffb497fe2556434e65c7ff266" style="width: 100.0%; height: 100.0%;"><b>SAT — San Antonio International Airport</b><br>             Cidade: San Antonio, TX<br>             Cluster: Excelente (16%)<br>             Taxa de atraso: 17.2%<br>             Atraso médio: 3.3 min</div>`)[0];
+                popup_0fefa89fc2ed6e22d58ddcf87a229fed.setContent(html_13c1c43ffb497fe2556434e65c7ff266);
+            
+        
+
+        circle_marker_d431253b092dfd29e6a57d1974ed27fe.bindPopup(popup_0fefa89fc2ed6e22d58ddcf87a229fed)
+        ;
+
+        
+    
+    
+            var circle_marker_8a9a6e6dc26f604445dcc1c2a7d5abf9 = L.circleMarker(
+                [32.12758, -81.20214],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_f67e1138015897a0be3c3020260b3cc3 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_06c5cbc42cea4faae740e299b26f986a = $(`<div id="html_06c5cbc42cea4faae740e299b26f986a" style="width: 100.0%; height: 100.0%;"><b>SAV — Savannah/Hilton Head International Airport</b><br>             Cidade: Savannah, GA<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 22.9%<br>             Atraso médio: 9.5 min</div>`)[0];
+                popup_f67e1138015897a0be3c3020260b3cc3.setContent(html_06c5cbc42cea4faae740e299b26f986a);
+            
+        
+
+        circle_marker_8a9a6e6dc26f604445dcc1c2a7d5abf9.bindPopup(popup_f67e1138015897a0be3c3020260b3cc3)
+        ;
+
+        
+    
+    
+            var circle_marker_49bd9521909aaea35bf11f003323827d = L.circleMarker(
+                [34.42621, -119.84037],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_e6cf815d60704a8b14f53b5dfff06495 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4f6039de203368866e3da53bd0605972 = $(`<div id="html_4f6039de203368866e3da53bd0605972" style="width: 100.0%; height: 100.0%;"><b>SBA — Santa Barbara Municipal Airport (Santa Barbara Airport)</b><br>             Cidade: Santa Barbara, CA<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 21.3%<br>             Atraso médio: 8.1 min</div>`)[0];
+                popup_e6cf815d60704a8b14f53b5dfff06495.setContent(html_4f6039de203368866e3da53bd0605972);
+            
+        
+
+        circle_marker_49bd9521909aaea35bf11f003323827d.bindPopup(popup_e6cf815d60704a8b14f53b5dfff06495)
+        ;
+
+        
+    
+    
+            var circle_marker_4879af015e9ed370d244027e0c6bd21c = L.circleMarker(
+                [41.70895, -86.31847],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_21ad8ab37057d58b6788a5319652a469 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_fa5d0289be273c0986e2f0d7efb27044 = $(`<div id="html_fa5d0289be273c0986e2f0d7efb27044" style="width: 100.0%; height: 100.0%;"><b>SBN — South Bend International Airport (South Bend Regional)</b><br>             Cidade: South Bend, IN<br>             Cluster: Crítico (33%)<br>             Taxa de atraso: 31.0%<br>             Atraso médio: 19.4 min</div>`)[0];
+                popup_21ad8ab37057d58b6788a5319652a469.setContent(html_fa5d0289be273c0986e2f0d7efb27044);
+            
+        
+
+        circle_marker_4879af015e9ed370d244027e0c6bd21c.bindPopup(popup_21ad8ab37057d58b6788a5319652a469)
+        ;
+
+        
+    
+    
+            var circle_marker_7521d4afa49752c7d021d55feabfe4d8 = L.circleMarker(
+                [35.23706, -120.64239],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_270912e34bfed0a0d048bdf483f8efb5 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_aa521295e81287b86edd68cff7547952 = $(`<div id="html_aa521295e81287b86edd68cff7547952" style="width: 100.0%; height: 100.0%;"><b>SBP — San Luis Obispo County Regional Airport (McChesney Field)</b><br>             Cidade: San Luis Obispo, CA<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 19.3%<br>             Atraso médio: 5.6 min</div>`)[0];
+                popup_270912e34bfed0a0d048bdf483f8efb5.setContent(html_aa521295e81287b86edd68cff7547952);
+            
+        
+
+        circle_marker_7521d4afa49752c7d021d55feabfe4d8.bindPopup(popup_270912e34bfed0a0d048bdf483f8efb5)
+        ;
+
+        
+    
+    
+            var circle_marker_ff0286ce126f6d1c442000ba9005ad9c = L.circleMarker(
+                [38.17439, -85.736],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_636064e4422e827be56073efc21a0a2b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_03d400811c71301c86650f355690a9ae = $(`<div id="html_03d400811c71301c86650f355690a9ae" style="width: 100.0%; height: 100.0%;"><b>SDF — Louisville International Airport (Standiford Field)</b><br>             Cidade: Louisville, KY<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 22.3%<br>             Atraso médio: 6.1 min</div>`)[0];
+                popup_636064e4422e827be56073efc21a0a2b.setContent(html_03d400811c71301c86650f355690a9ae);
+            
+        
+
+        circle_marker_ff0286ce126f6d1c442000ba9005ad9c.bindPopup(popup_636064e4422e827be56073efc21a0a2b)
+        ;
+
+        
+    
+    
+            var circle_marker_f4360b25d6c85bcf26ff80d77b5bc767 = L.circleMarker(
+                [47.44898, -122.30931],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_2739db9669cdddc59f767e40048d6d4c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2210192af36980422a1e709a18486359 = $(`<div id="html_2210192af36980422a1e709a18486359" style="width: 100.0%; height: 100.0%;"><b>SEA — Seattle-Tacoma International Airport</b><br>             Cidade: Seattle, WA<br>             Cluster: Excelente (16%)<br>             Taxa de atraso: 17.0%<br>             Atraso médio: 2.3 min</div>`)[0];
+                popup_2739db9669cdddc59f767e40048d6d4c.setContent(html_2210192af36980422a1e709a18486359);
+            
+        
+
+        circle_marker_f4360b25d6c85bcf26ff80d77b5bc767.bindPopup(popup_2739db9669cdddc59f767e40048d6d4c)
+        ;
+
+        
+    
+    
+            var circle_marker_cae2f6c32303d389b979ebca63caab12 = L.circleMarker(
+                [37.619, -122.37484],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_9b15e4b533eab4580967a62d865a8401 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_df4449709a041da20ca2c39519585288 = $(`<div id="html_df4449709a041da20ca2c39519585288" style="width: 100.0%; height: 100.0%;"><b>SFO — San Francisco International Airport</b><br>             Cidade: San Francisco, CA<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 23.4%<br>             Atraso médio: 9.4 min</div>`)[0];
+                popup_9b15e4b533eab4580967a62d865a8401.setContent(html_df4449709a041da20ca2c39519585288);
+            
+        
+
+        circle_marker_cae2f6c32303d389b979ebca63caab12.bindPopup(popup_9b15e4b533eab4580967a62d865a8401)
+        ;
+
+        
+    
+    
+            var circle_marker_4c0df006d150658d2b817f59adc3b827 = L.circleMarker(
+                [37.24433, -93.38686],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_5ab54c23aacd58a469aa279920f20995 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c53908f8fb2c974d0e44d186e5b6f88f = $(`<div id="html_c53908f8fb2c974d0e44d186e5b6f88f" style="width: 100.0%; height: 100.0%;"><b>SGF — Springfield-Branson National Airport</b><br>             Cidade: Springfield, MO<br>             Cluster: Crítico (33%)<br>             Taxa de atraso: 31.9%<br>             Atraso médio: 19.2 min</div>`)[0];
+                popup_5ab54c23aacd58a469aa279920f20995.setContent(html_c53908f8fb2c974d0e44d186e5b6f88f);
+            
+        
+
+        circle_marker_4c0df006d150658d2b817f59adc3b827.bindPopup(popup_5ab54c23aacd58a469aa279920f20995)
+        ;
+
+        
+    
+    
+            var circle_marker_cb6ee125caa343d06c188a05a72f17ea = L.circleMarker(
+                [32.44663, -93.8256],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_d172fbe686707b9693b35c2b82ff580c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_54f5b2d3a084ec38cd8a5e4e7f6ef6b3 = $(`<div id="html_54f5b2d3a084ec38cd8a5e4e7f6ef6b3" style="width: 100.0%; height: 100.0%;"><b>SHV — Shreveport Regional Airport</b><br>             Cidade: Shreveport, LA<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 25.6%<br>             Atraso médio: 12.6 min</div>`)[0];
+                popup_d172fbe686707b9693b35c2b82ff580c.setContent(html_54f5b2d3a084ec38cd8a5e4e7f6ef6b3);
+            
+        
+
+        circle_marker_cb6ee125caa343d06c188a05a72f17ea.bindPopup(popup_d172fbe686707b9693b35c2b82ff580c)
+        ;
+
+        
+    
+    
+            var circle_marker_a0414f80e539b62039ff26cd459037d1 = L.circleMarker(
+                [37.36186, -121.92901],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_90947fe316f783a5cca1b28c07935251 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_4dca2e41d1fc329ad9e9647f0556f988 = $(`<div id="html_4dca2e41d1fc329ad9e9647f0556f988" style="width: 100.0%; height: 100.0%;"><b>SJC — Norman Y. Mineta San José International Airport</b><br>             Cidade: San Jose, CA<br>             Cluster: Excelente (16%)<br>             Taxa de atraso: 16.9%<br>             Atraso médio: 4.8 min</div>`)[0];
+                popup_90947fe316f783a5cca1b28c07935251.setContent(html_4dca2e41d1fc329ad9e9647f0556f988);
+            
+        
+
+        circle_marker_a0414f80e539b62039ff26cd459037d1.bindPopup(popup_90947fe316f783a5cca1b28c07935251)
+        ;
+
+        
+    
+    
+            var circle_marker_6a0ff6f0a8c20460957fd5401e0c711b = L.circleMarker(
+                [18.43942, -66.00183],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_8536fcc08fb9619e1189b520182e388f = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_ffc06bded385fe1c4295ebd69e8efd71 = $(`<div id="html_ffc06bded385fe1c4295ebd69e8efd71" style="width: 100.0%; height: 100.0%;"><b>SJU — Luis Muñoz Marín International Airport</b><br>             Cidade: San Juan, PR<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 24.3%<br>             Atraso médio: 10.3 min</div>`)[0];
+                popup_8536fcc08fb9619e1189b520182e388f.setContent(html_ffc06bded385fe1c4295ebd69e8efd71);
+            
+        
+
+        circle_marker_6a0ff6f0a8c20460957fd5401e0c711b.bindPopup(popup_8536fcc08fb9619e1189b520182e388f)
+        ;
+
+        
+    
+    
+            var circle_marker_3e95568fe9f0fd940421aa8d0fa1c67a = L.circleMarker(
+                [40.78839, -111.97777],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_ce7cd8978252147900afadab74043181 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_993ffa6a77db503599eded79c886edbb = $(`<div id="html_993ffa6a77db503599eded79c886edbb" style="width: 100.0%; height: 100.0%;"><b>SLC — Salt Lake City International Airport</b><br>             Cidade: Salt Lake City, UT<br>             Cluster: Excelente (16%)<br>             Taxa de atraso: 13.7%<br>             Atraso médio: 0.2 min</div>`)[0];
+                popup_ce7cd8978252147900afadab74043181.setContent(html_993ffa6a77db503599eded79c886edbb);
+            
+        
+
+        circle_marker_3e95568fe9f0fd940421aa8d0fa1c67a.bindPopup(popup_ce7cd8978252147900afadab74043181)
+        ;
+
+        
+    
+    
+            var circle_marker_69d358b34a96f894d035960453e93ff0 = L.circleMarker(
+                [38.69542, -121.59077],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_3f328d909a49fd52131aaf6509d34ed6 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_985eb5edda497a2d07381d2ebf38fc65 = $(`<div id="html_985eb5edda497a2d07381d2ebf38fc65" style="width: 100.0%; height: 100.0%;"><b>SMF — Sacramento International Airport</b><br>             Cidade: Sacramento, CA<br>             Cluster: Excelente (16%)<br>             Taxa de atraso: 18.5%<br>             Atraso médio: 6.3 min</div>`)[0];
+                popup_3f328d909a49fd52131aaf6509d34ed6.setContent(html_985eb5edda497a2d07381d2ebf38fc65);
+            
+        
+
+        circle_marker_69d358b34a96f894d035960453e93ff0.bindPopup(popup_3f328d909a49fd52131aaf6509d34ed6)
+        ;
+
+        
+    
+    
+            var circle_marker_9f983b46a5514d2fbe8c5bae9aacbeb6 = L.circleMarker(
+                [33.67566, -117.86822],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_3fb2d379aa0fd0a845a4712873ce946d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_39e426de5f162d6e894b3d52b29d91a8 = $(`<div id="html_39e426de5f162d6e894b3d52b29d91a8" style="width: 100.0%; height: 100.0%;"><b>SNA — John Wayne Airport (Orange County Airport)</b><br>             Cidade: Santa Ana, CA<br>             Cluster: Excelente (16%)<br>             Taxa de atraso: 16.2%<br>             Atraso médio: 2.9 min</div>`)[0];
+                popup_3fb2d379aa0fd0a845a4712873ce946d.setContent(html_39e426de5f162d6e894b3d52b29d91a8);
+            
+        
+
+        circle_marker_9f983b46a5514d2fbe8c5bae9aacbeb6.bindPopup(popup_3fb2d379aa0fd0a845a4712873ce946d)
+        ;
+
+        
+    
+    
+            var circle_marker_e2985ca204fad1a68a75b3c46e370bcd = L.circleMarker(
+                [27.39533, -82.55411],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_faec0d57f652a1d35ce5adb762747de1 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_2b61978e8b6d4edffc74ab8e8a384fc9 = $(`<div id="html_2b61978e8b6d4edffc74ab8e8a384fc9" style="width: 100.0%; height: 100.0%;"><b>SRQ — Sarasota-Bradenton International Airport</b><br>             Cidade: Sarasota, FL<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 20.1%<br>             Atraso médio: 10.3 min</div>`)[0];
+                popup_faec0d57f652a1d35ce5adb762747de1.setContent(html_2b61978e8b6d4edffc74ab8e8a384fc9);
+            
+        
+
+        circle_marker_e2985ca204fad1a68a75b3c46e370bcd.bindPopup(popup_faec0d57f652a1d35ce5adb762747de1)
+        ;
+
+        
+    
+    
+            var circle_marker_c4ad4d769c7637c2453ff04433a3a3b4 = L.circleMarker(
+                [38.74769, -90.35999],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_36e488a8a5c82e518e6cc4a2a538dfa7 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_8cff0c50db091d426d9d9bb1c38efc03 = $(`<div id="html_8cff0c50db091d426d9d9bb1c38efc03" style="width: 100.0%; height: 100.0%;"><b>STL — St. Louis International Airport at Lambert Field</b><br>             Cidade: St Louis, MO<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 21.1%<br>             Atraso médio: 4.3 min</div>`)[0];
+                popup_36e488a8a5c82e518e6cc4a2a538dfa7.setContent(html_8cff0c50db091d426d9d9bb1c38efc03);
+            
+        
+
+        circle_marker_c4ad4d769c7637c2453ff04433a3a3b4.bindPopup(popup_36e488a8a5c82e518e6cc4a2a538dfa7)
+        ;
+
+        
+    
+    
+            var circle_marker_a7c8f63bd2c486e44c58d7385bb43db4 = L.circleMarker(
+                [18.33731, -64.97336],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_1331e74beb57f985f5824884cac6bcce = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7adba3c7770f999acda6d1eb017df2b0 = $(`<div id="html_7adba3c7770f999acda6d1eb017df2b0" style="width: 100.0%; height: 100.0%;"><b>STT — Cyril E. King Airport</b><br>             Cidade: Charlotte Amalie, VI<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 25.2%<br>             Atraso médio: 9.3 min</div>`)[0];
+                popup_1331e74beb57f985f5824884cac6bcce.setContent(html_7adba3c7770f999acda6d1eb017df2b0);
+            
+        
+
+        circle_marker_a7c8f63bd2c486e44c58d7385bb43db4.bindPopup(popup_1331e74beb57f985f5824884cac6bcce)
+        ;
+
+        
+    
+    
+            var circle_marker_ab7d1cdafbbf87a3db91aa1cf20b02ca = L.circleMarker(
+                [43.11119, -76.10631],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_9bd745e243326bf5a9b5abcea6b605c9 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_0127c4f52fcb29c050e3bb3d21fa163b = $(`<div id="html_0127c4f52fcb29c050e3bb3d21fa163b" style="width: 100.0%; height: 100.0%;"><b>SYR — Syracuse Hancock International Airport</b><br>             Cidade: Syracuse, NY<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 29.0%<br>             Atraso médio: 12.3 min</div>`)[0];
+                popup_9bd745e243326bf5a9b5abcea6b605c9.setContent(html_0127c4f52fcb29c050e3bb3d21fa163b);
+            
+        
+
+        circle_marker_ab7d1cdafbbf87a3db91aa1cf20b02ca.bindPopup(popup_9bd745e243326bf5a9b5abcea6b605c9)
+        ;
+
+        
+    
+    
+            var circle_marker_7d1084f21d492f90f583786826e7d7d1 = L.circleMarker(
+                [30.39653, -84.35033],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_856e6f6e6cb8ba2d20f8b77d561e3489 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_642deef4858ff20c7294a88938c0fd3a = $(`<div id="html_642deef4858ff20c7294a88938c0fd3a" style="width: 100.0%; height: 100.0%;"><b>TLH — Tallahassee International Airport</b><br>             Cidade: Tallahassee, FL<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 18.3%<br>             Atraso médio: 6.8 min</div>`)[0];
+                popup_856e6f6e6cb8ba2d20f8b77d561e3489.setContent(html_642deef4858ff20c7294a88938c0fd3a);
+            
+        
+
+        circle_marker_7d1084f21d492f90f583786826e7d7d1.bindPopup(popup_856e6f6e6cb8ba2d20f8b77d561e3489)
+        ;
+
+        
+    
+    
+            var circle_marker_db33e77d9cb6d7aff77e88a465b19eb0 = L.circleMarker(
+                [27.97547, -82.53325],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_a625e41616b6132942af01f1d0cbc3cc = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_f5f0b6cf0b58754f1322b11490690388 = $(`<div id="html_f5f0b6cf0b58754f1322b11490690388" style="width: 100.0%; height: 100.0%;"><b>TPA — Tampa International Airport</b><br>             Cidade: Tampa, FL<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 19.2%<br>             Atraso médio: 6.0 min</div>`)[0];
+                popup_a625e41616b6132942af01f1d0cbc3cc.setContent(html_f5f0b6cf0b58754f1322b11490690388);
+            
+        
+
+        circle_marker_db33e77d9cb6d7aff77e88a465b19eb0.bindPopup(popup_a625e41616b6132942af01f1d0cbc3cc)
+        ;
+
+        
+    
+    
+            var circle_marker_de04b5717cfcaa2a9162d0eb94053235 = L.circleMarker(
+                [36.19837, -95.88824],
+                {"bubblingMouseEvents": true, "color": "#f39c12", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#f39c12", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_231e37a4f2005e7019cdf2f03f3f135d = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_c2f6af594d6806caad3012f450572884 = $(`<div id="html_c2f6af594d6806caad3012f450572884" style="width: 100.0%; height: 100.0%;"><b>TUL — Tulsa International Airport</b><br>             Cidade: Tulsa, OK<br>             Cluster: Bom (21%)<br>             Taxa de atraso: 19.8%<br>             Atraso médio: 4.8 min</div>`)[0];
+                popup_231e37a4f2005e7019cdf2f03f3f135d.setContent(html_c2f6af594d6806caad3012f450572884);
+            
+        
+
+        circle_marker_de04b5717cfcaa2a9162d0eb94053235.bindPopup(popup_231e37a4f2005e7019cdf2f03f3f135d)
+        ;
+
+        
+    
+    
+            var circle_marker_2e718abdc5e497944c9db79504b0ceee = L.circleMarker(
+                [32.11608, -110.94103],
+                {"bubblingMouseEvents": true, "color": "#2ecc71", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#2ecc71", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_dc810fa5dbdec9f76207179d0a7b91fa = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_58a0e23ff561a9859bb6801d9764a643 = $(`<div id="html_58a0e23ff561a9859bb6801d9764a643" style="width: 100.0%; height: 100.0%;"><b>TUS — Tucson International Airport</b><br>             Cidade: Tucson, AZ<br>             Cluster: Excelente (16%)<br>             Taxa de atraso: 15.6%<br>             Atraso médio: 2.6 min</div>`)[0];
+                popup_dc810fa5dbdec9f76207179d0a7b91fa.setContent(html_58a0e23ff561a9859bb6801d9764a643);
+            
+        
+
+        circle_marker_2e718abdc5e497944c9db79504b0ceee.bindPopup(popup_dc810fa5dbdec9f76207179d0a7b91fa)
+        ;
+
+        
+    
+    
+            var circle_marker_13b29f5e683db3e40b2502aa6d8ab85e = L.circleMarker(
+                [35.81249, -83.99286],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_ed9d05d79866dc456a11e40d3b9b673c = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_e22eba928f045f13f35ca6a972352ea3 = $(`<div id="html_e22eba928f045f13f35ca6a972352ea3" style="width: 100.0%; height: 100.0%;"><b>TYS — McGhee Tyson Airport</b><br>             Cidade: Knoxville, TN<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 30.5%<br>             Atraso médio: 16.5 min</div>`)[0];
+                popup_ed9d05d79866dc456a11e40d3b9b673c.setContent(html_e22eba928f045f13f35ca6a972352ea3);
+            
+        
+
+        circle_marker_13b29f5e683db3e40b2502aa6d8ab85e.bindPopup(popup_ed9d05d79866dc456a11e40d3b9b673c)
+        ;
+
+        
+    
+    
+            var circle_marker_4b7d9650fbd4058bfe08253ea2bb654e = L.circleMarker(
+                [30.48325, -86.5254],
+                {"bubblingMouseEvents": true, "color": "#e74c3c", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#e74c3c", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_58910355a535c0ce8f1d04b0520d0a53 = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_54bf94248c5290e383c9683e63695350 = $(`<div id="html_54bf94248c5290e383c9683e63695350" style="width: 100.0%; height: 100.0%;"><b>VPS — Destin-Fort Walton Beach Airport/Eglin AFB</b><br>             Cidade: Valparaiso, FL<br>             Cluster: Ruim (26%)<br>             Taxa de atraso: 21.9%<br>             Atraso médio: 9.8 min</div>`)[0];
+                popup_58910355a535c0ce8f1d04b0520d0a53.setContent(html_54bf94248c5290e383c9683e63695350);
+            
+        
+
+        circle_marker_4b7d9650fbd4058bfe08253ea2bb654e.bindPopup(popup_58910355a535c0ce8f1d04b0520d0a53)
+        ;
+
+        
+    
+    
+            var circle_marker_934b445f98ff90c6708b076a33d105cb = L.circleMarker(
+                [36.28187, -94.30681],
+                {"bubblingMouseEvents": true, "color": "#c0392b", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#c0392b", "fillOpacity": 0.8, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_fe402801db6822478758ea6dfca1cb28);
+        
+    
+        var popup_9f82c353551e21d3bbad26e196d3e02b = L.popup({
+  "maxWidth": 250,
+});
+
+        
+            
+                var html_7bfa64aae278dab4892af32177afe4fb = $(`<div id="html_7bfa64aae278dab4892af32177afe4fb" style="width: 100.0%; height: 100.0%;"><b>XNA — Northwest Arkansas Regional Airport</b><br>             Cidade: Fayetteville/Springdale/Rogers, AR<br>             Cluster: Crítico (33%)<br>             Taxa de atraso: 31.9%<br>             Atraso médio: 19.7 min</div>`)[0];
+                popup_9f82c353551e21d3bbad26e196d3e02b.setContent(html_7bfa64aae278dab4892af32177afe4fb);
+            
+        
+
+        circle_marker_934b445f98ff90c6708b076a33d105cb.bindPopup(popup_9f82c353551e21d3bbad26e196d3e02b)
+        ;
+
+        
+    
+</script>
+</html>
