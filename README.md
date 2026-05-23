@@ -1,4 +1,4 @@
-# ✈️ Tech Challenge Fase 3 — Análise e Predição de Atrasos de Voos
+# ✈️ Análise e Predição de Atrasos de Voos
 
 ![Python](https://img.shields.io/badge/Python-3.14-blue?logo=python)
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter)
@@ -16,7 +16,6 @@
 - [Sobre o Projeto](#-sobre-o-projeto)
 - [Base de Dados](#-base-de-dados)
 - [Pipeline do Projeto](#-pipeline-do-projeto)
-- [Estrutura do Repositório](#-estrutura-do-repositório)
 - [Principais Resultados](#-principais-resultados)
 - [Modelos Utilizados](#-modelos-utilizados)
 - [Como Executar](#-como-executar)
@@ -67,9 +66,6 @@ para desenvolver análises e modelos preditivos aplicando técnicas de
 | `DISTANCE` | Distância do voo em milhas |
 | `CANCELLED` | Se o voo foi cancelado |
 
----
-
-## 📁 Estrutura do Repositório
 ---
 
 ## 📊 Principais Resultados
