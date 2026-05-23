@@ -11,9 +11,6 @@
 
 > Pipeline completo de Machine Learning para análise, classificação e clusterização de atrasos de voos nos EUA utilizando técnicas supervisionadas e não supervisionadas.
 
-<p align="center">
-  <img src="assets/pipeline-projeto.png" alt="Pipeline do Projeto" width="100%">
-</p>
 
 ---
 
@@ -71,14 +68,12 @@ O transporte aéreo é uma parte vital da infraestrutura global, mas os atrasos 
 ```bash
 tech-challenge-fase3/
 │
-├── assets/                   # Imagens e gráficos
+├── assets/                   # Imagens 
 ├── data/                     # Bases de dados
+├── docs/                     # Documentos do projeto 
 ├── notebooks/                # Análises e experimentos
 ├── dashboard/                # Dashboard Streamlit
-├── models/                   # Modelos treinados
 │
-├── dashboard.py
-├── tech_challenge3.ipynb
 ├── requirements.txt
 └── README.md
 ```
