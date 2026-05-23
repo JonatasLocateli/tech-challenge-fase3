@@ -69,10 +69,10 @@ O transporte aéreo é uma parte vital da infraestrutura global, mas os atrasos 
 tech-challenge-fase3/
 │
 ├── assets/                   # Imagens 
-├── outputs/                  # Imagem gerada pelos experimentos
 ├── docs/                     # Documentos do projeto 
 ├── notebooks/                # Análises e experimentos
 ├── dashboard/                # Dashboard Streamlit
+├── outputs/                  # Imagem gerada pelos experimentos
 │
 ├── requirements.txt
 └── README.md
