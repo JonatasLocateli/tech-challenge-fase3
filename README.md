@@ -1,8 +1,5 @@
 # ✈️ Análise e Predição de Atrasos de Voos
 
-<p align="center">
-  <img src="assets/pipeline-projeto.png" alt="Pipeline do Projeto" width="100%">
-</p>
 
 ![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python)
 ![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter)
@@ -13,6 +10,10 @@
 ![Status](https://img.shields.io/badge/Status-Completo-brightgreen)
 
 > Pipeline completo de Machine Learning para análise, classificação e clusterização de atrasos de voos nos EUA utilizando técnicas supervisionadas e não supervisionadas.
+
+<p align="center">
+  <img src="assets/pipeline-projeto.png" alt="Pipeline do Projeto" width="100%">
+</p>
 
 ---
 
