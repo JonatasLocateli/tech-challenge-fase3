@@ -50,7 +50,7 @@ O transporte aéreo é uma parte vital da infraestrutura global, mas os atrasos 
 # 🚀 Destaques Técnicos
 
 - Pipeline completo de Data Science
-- Processamento de mais de 5 milhões de registros
+- Processamento de 1 milhão de registros
 - Feature Engineering
 - Classificação supervisionada
 - Clusterização com K-Means
