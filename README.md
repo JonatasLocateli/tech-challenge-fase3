@@ -336,7 +336,11 @@ http://localhost:8501
 
 O projeto demonstrou que técnicas de Machine Learning conseguem identificar padrões relevantes em atrasos de voos com alta capacidade preditiva.
 
+Ambos os modelos supervisionados aplicados performaram muito bem com AUC acima de 0.96. O principal preditor de atraso é o atraso na partida, confirmando o efeito cascata. 
 Além da classificação supervisionada, métodos não supervisionados permitiram segmentar aeroportos por perfil operacional e identificar comportamentos anômalos relevantes.
+
+As principais limitações são: a base cobre apenas 3 meses de 2015. Foi utilizado 17% da base total por limitação de hardware, e o modelo depende do DEPARTURE_DELAY — que só é conhecido quando o voo já está atrasando. 
+Um próximo passo seria treinar um modelo usando apenas variáveis conhecidas antes do voo, como companhia, horário e aeroporto.
 
 Os resultados reforçam como engenharia de dados, análise exploratória e modelagem estatística podem gerar insights estratégicos para o setor aéreo.
 
