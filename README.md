@@ -11,7 +11,7 @@
 
 > Pipeline completo de Machine Learning para análise, classificação e clusterização de atrasos de voos nos EUA utilizando técnicas supervisionadas e não supervisionadas.
 
-
+# Link da Apresentação: https://drive.google.com/file/d/12x86s7AY-NnESctzVFw2UUrRr5H7WNvE/view
 ---
 
 # 📋 Índice
